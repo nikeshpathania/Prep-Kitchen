@@ -1,0 +1,573 @@
+@import url(../fonts/fontsFace.css);
+
+$colors: (
+  primary:#23D16A,
+  dark-Primary: #42B564,
+
+  darkPrimary-dark: darken(#23D16A, 30%),
+  offWhite:#F5F5F5,
+  peachColor: #B7B7B7,
+  skinColor: #EAAD7F,
+  dark-fontColor: #464646,
+  light-gray: #F4F4F4,
+
+  light-fontColor: #777777,
+  whiteColor: #FFFFFF,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+
+/* font size & line height in px */
+$font-size-body-px: 14;
+$line-height-px: 21;
+
+/* calculate font-size (in %) and line-height (in em) */
+$font-size-body: pc($font-size-body-px, 16);
+$line-height: em($line-height-px, $font-size-body-px);
+
+// Reset the global font size to the given value.
+// Helpful if the font size should change at different responsive breakpoints.
+//
+// @param integer new global font size in px
+// @return string new font size var and stylesheet for body
+@mixin refont($px) {
+  $font-size-body-px: $px;
+  $font-size-body: $font-size-body-px / 16 * 100%;
+  body { font-size: $font-size-body; }
+}
+
+// Calculates em so it could be used everywhere.
+//
+// @param integer (font) size in pixel
+// @param integer reference font-size in pixel
+// @return string em
+@function em($px: $line-height-px, $font-size: $font-size-body-px) {
+  @return $px / $font-size * 1em;
+}
+
+// Calculates rem so it could be used everywhere.
+//
+// @param integer font size in pixel
+// @param integer reference size (for rem always font-size of body) in pixel
+// @return string rem
+@function rem($px: $line-height-px, $font-size: $font-size-body-px) {
+  @return $px / $font-size * 1rem;
+}
+
+// Calculates percent so it could be used everywhere.
+//
+// @param integer size in pixel
+// @param integer reference size in pixel
+// @return string em
+@function pc($px: $line-height-px, $standard: $font-size-body-px) {
+  @return $px / $standard * 100%;
+}
+
+// Creates the font size in %
+//
+// @param integer font size in px
+// @param integer font-size of parent element in px (if empty than it's the global font size)
+// @return string css font-size with calculated % value
+@mixin font-size($px, $standard: $font-size-body-px) {
+  font-size: pc($px,$standard);
+}
+
+// Creates the line height in em
+//
+// @param integer font size in pixel
+// @param integer line-height in pixel
+// @return string line height
+@mixin line-height($line-height: $line-height-px, $font-size: $font-size-body-px) {
+  line-height: em($line-height, $font-size);
+}
+
+@media all
+{
+
+  body {
+    font-family: 'rubiklight';
+    font-size: $font-size-body;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    padding: 0;
+    margin: 0;
+    color: map-get($colors , light-fontColor );
+  }
+.header-hero { 
+  background-color: map-get($colors , primary);
+  background-image: url(../images/header.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+  height: calc(100vh - 50px);
+  text-transform: lowercase;
+  font-family: 'rubikmedium';
+  position: relative;
+
+  .header-hero-contentBlock {
+
+    max-width: 500px;
+    position: absolute;
+    bottom: 10%;
+    left: 25%;
+    transform: translateX(-20%);
+
+    .subheading {
+      font-family: 'rubikregular';
+      color: map-get($colors, whiteColor );
+      margin-bottom:rem(16);
+      display: block;
+    }
+    h1 {
+      font-size: rem(60);
+      font-family: 'rubikmedium';
+      color: map-get($colors, whiteColor );
+      margin-top: 0;
+      font-weight: normal;
+    }
+    .action-block{
+      overflow: hidden;
+      margin-top:20px;
+      margin-bottom:20px;
+    
+    }
+    .reviews {
+      font-size: rem(24);
+      color: map-get($colors , darkPrimary-dark );
+      border-bottom:4px solid map-get($colors , darkPrimary-dark );
+      .stars{
+        font-size: 12px;
+        
+
+        img {
+          font-size: 12px;
+
+          height: 20px;
+          vertical-align: top;
+        }
+      }
+
+    }
+  }
+  .new-Alert {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 350px;
+    background-color: map-get($colors , whiteColor );
+    border-radius: 0px 50px 50px 50px;
+    padding: 5px;
+    box-shadow: 1px 3px 2px map-get($colors , dark-Primary );
+
+    .title {
+      color: map-get($colors , dark-Primary );
+      font-size: em(18);
+    }
+    p{   padding: 5px 20px 5px 30px;
+      font-size: em(16);
+      font-family: 'rubiklight';
+    }
+  }
+
+  
+}
+
+.btn {
+  border: 1px solid transparent;
+  font-size: rem(18);
+  min-width: 150px;
+}
+
+.btn-white {
+  border-radius: 50px;
+  background-color: map-get($colors, whiteColor );
+  color: map-get($colors , primary );
+  padding:15px 20px;
+  border:none;
+}
+
+.navbar-toggle {
+  float: left;
+ content: 'f0c9';
+}
+
+.nav-container {
+  text-align:center;
+
+  #logo {
+    width:calc(100% - 50px);
+    float: left;
+    text-align: center;
+    svg {
+      width: 100px;
+      transform: translateX(-50px);
+      margin:6px auto;
+    }
+  }
+  #top-right {
+    float: right;
+    position: absolute;
+    right: 0;
+
+    .search-icon {
+      float: left;
+      cursor: pointer;
+    
+      svg {
+        width:28px;
+        margin-top: 16px;
+        margin-right: 7px;
+          .a{
+            fill:#707070;
+          }
+      }
+    }
+    .btn_block {
+      float: left;
+      
+      .btn-black {
+        background-color: map-get($colors , dark-fontColor);
+        color: map-get($colors , whiteColor );
+      }
+    }
+
+    .cart-item {
+      float: right;
+      padding: 15px;
+      margin-right: 10px;
+      position: relative;
+      cursor: pointer;
+      .badge {
+        background: map-get($colors , primary );
+        position: absolute;
+        right: 0;
+        top: 7px;
+      }
+      svg {
+        width: 24px;
+        .a{
+          fill:#b2b2b2;}
+        
+      }
+    }
+  }
+
+}
+
+section {
+  margin-top: em(40);
+  height: auto;
+  clear: both;
+}
+
+  .section_content {
+    width: 60%;
+    margin: em(30) auto;
+    line-height: em(22);
+    margin-top: -12.5px;
+    text-align: center;
+    font-family: 'rubiklight';
+    font-style: normal;
+    font-weight: lighter;
+    font-size: em(18);
+    color: map-get($colors , light-fontColor );
+    letter-spacing: -0.2px;
+  }
+  .sub-heading {
+    font-family: 'rubikmedium';
+    font-size: em(35);
+    margin-bottom: em(10);
+    color: map-get($colors , dark-fontColor );
+    text-transform: lowercase;
+  }
+
+  .media-middle 
+  img{
+    width: 100px;
+  }
+
+  .making_delivery_convenient___simple_ {
+    text-transform: lowercase;
+  
+    .section-heading {
+      @extend .sub-heading;
+      text-align: left;
+    }
+    .H-icons-block {
+      overflow: hidden;
+      .H-icons {
+        width: 100px;
+        margin: 0 15px;
+        float: left;
+        text-align: center;
+        img {
+          width: 50px;
+          margin-bottom:15px;
+        }
+        p{
+          padding:0;
+        }
+      }
+     
+    }
+  }
+
+  .green_text {
+    color: map-get($colors , primary );
+    margin: em(20) 0;
+    font-size: em(16);
+  }
+
+  .review_heading {
+    color: map-get($colors , dark-fontColor );
+    font-weight: bold;
+    border-bottom: 2px solid map-get($colors , darkPrimary-dark );
+    margin-bottom: 15px;
+
+    .review_button_control {
+      float:right;
+      button {
+        background: none;
+        border:none;
+      }
+    }
+  }
+  .review_block-container {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  
+  .review_block {
+    display: inline-block;
+    width: 273px;
+
+    &:before {
+      content: attr(data-before);
+      position: absolute;  
+      margin-left:-90px;
+      margin-top: 2px;
+      font-size: em(12);
+     }
+
+    .review_star img{
+      height: 15px;
+    }
+    .review_text {
+      font-style: italic;
+      font-style: em(16);
+      margin: 10px 0;
+    }
+    .review_author {
+      font-weight: bold;
+    }
+    
+  }
+}
+   
+
+
+.delivery_option {
+  
+  .bg {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    img{
+      width: 100%;
+    }
+  }
+
+  .delivery_option-content {
+    position: relative;
+  }
+  .delivery_option-heading {
+    text-align: center;
+    padding-top: em(20);
+    padding-bottom: em(20);
+    
+    h2{
+      color: map-get($colors , primary);
+      font-size: em(30);
+    }
+    p{
+      font-size: em(20);
+    }
+  
+  }
+  .thumbnail{
+    position: relative;
+    background:none;
+    border:none;
+    
+    .caption {
+      color: map-get($colors , whiteColor);
+      h3 {
+        width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        z-index: 1;
+        margin-top: -150px;
+        color: map-get($colors ,  whiteColor);
+        font-size: em(30);
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+
+.btn {
+  border-radius: 25px;
+  padding: 10px;
+  margin: 5px 7px;
+  
+}
+.btn-green{
+  background-color: map-get($colors , primary );
+  color: map-get($colors , whiteColor )
+}
+
+
+.subscribe_block {
+  margin: em(50) 0;
+  padding:em(15) 0;
+  background-color: map-get($colors , light-gray);
+  text-align: center;
+}
+
+
+.what_popular {
+  margin-top: em(40);
+  .thumbnail {
+    border: none;
+  }
+  h3{
+    font-size: em(16);
+    margin-top:em(5);
+    margin-bottom: em(5);
+    min-height: em(40);
+  }
+  
+}
+
+.newsletter_block {
+  @extend .subscribe_block;
+  background-color: map-get($colors , primary);
+  color: map-get($colors , whiteColor );
+  padding: 30px 0;
+  .label {
+    font-weight: normal;
+  }
+  .form-control {
+    width: 300px;
+    margin-left: em(10);
+    border-radius: 23px;
+    background-color: map-get($colors , white );
+    border: 1px solid transparent;
+  }
+  img {
+    width: 28px;
+  }
+}
+
+footer {
+  h3{
+    color: map-get($colors , primary );
+    font-weight: bold;
+  }
+  .faq_label {
+    color: map-get($colors , primary);
+    margin-top: 5px;
+  }
+  .social_media {
+    img {
+      height: 24px;
+      margin: 0 15px 0 0;
+    }
+  }
+  .instagram_block {
+    img{
+      width: 200px;
+    }
+    
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    a{
+      color: map-get($colors , light-fontColor);
+    }
+  }
+  .copyright {
+    background: map-get($colors , dark-fontColor);
+    color: map-get($colors , whiteColor);
+    padding: 15px;
+  }
+}
+// Bootstrap Update
+.media-body, .media-left, .media-right{
+  vertical-align: middle;
+  color: map-get($colors , dark-fontColor );
+
+  .media-heading {
+    font-size: em(24);
+  }
+}
+
+#carousel-example-generic {
+  margin-top: -100px;
+}
+.carousel-control {
+  color: map-get($colors , primary);
+  
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  // background: transparent;
+  background-image: none;
+  img {
+    margin-top: 350px;
+  }
+}
+
+
+.float-left {
+  width:20px;
+  float: left;
+  svg {
+    margin-top: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+  .big {
+    font-size: pc(16);
+  }
+  small {
+    font-size: em(12);
+  }
+
+  div.info {
+    font-size: pc(25);
+  }
+
+  /* You have to set a new reference when using pc() or em() */
+  div.info .description {
+    font-size: pc(12,25);
+  }
+}
