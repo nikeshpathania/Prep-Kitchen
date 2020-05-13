@@ -14,6 +14,7 @@
     -ms-text-size-adjust: 100%;
     padding: 0;
     margin: 0;
+    text-transform: lowercase;
     color: #777777;
   }
   .header-hero {
@@ -177,7 +178,7 @@
     color: #777777;
     letter-spacing: -0.2px;
   }
-  .sub-heading, .making_delivery_convenient___simple_ .section-heading {
+  .sub-heading, .making_delivery_convenient___simple_ .section-heading, .section-heading, .delivery_pickup h2 {
     font-family: 'rubikmedium';
     font-size: 2.5em;
     margin-bottom: 0.71429em;
@@ -185,7 +186,8 @@
     text-transform: lowercase;
   }
   .media-middle img {
-    width: 100px;
+    width: 75px;
+    margin-right: 15px;
   }
   .making_delivery_convenient___simple_ {
     text-transform: lowercase;
@@ -199,6 +201,7 @@
   }
   .making_delivery_convenient___simple_ .H-icons-block .H-icons {
     width: 100px;
+    min-height: 100px;
     margin: 0 15px;
     float: left;
     text-align: center;
@@ -255,6 +258,11 @@
   }
   .review_block-container .review_block .review_author {
     font-weight: bold;
+  }
+  .delivery_option {
+    background: url(../images/pk-1-01.svg);
+    background-size: 100%;
+    overflow: hidden;
   }
   .delivery_option .bg {
     width: 100%;
@@ -336,7 +344,8 @@
   .newsletter_block {
     background-color: #23D16A;
     color: #FFFFFF;
-    padding: 30px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   .newsletter_block .label {
     font-weight: normal;
@@ -376,6 +385,9 @@
     background: #464646;
     color: #FFFFFF;
     padding: 15px;
+  }
+  .navbar {
+    margin: 0;
   }
   .media-body, .media-left, .media-right {
     vertical-align: middle;
@@ -539,6 +551,93 @@
               transform: translateY(0);
       opacity: 1;
     }
+  }
+}
+
+.page-header {
+  margin: 0;
+  background: url(../images/pk-green-1-01.svg) no-repeat;
+  background-size: 100%;
+  min-height: 200px;
+}
+
+.page-header .page-title {
+  font-family: 'rubikmedium';
+  max-width: 400px;
+  color: #FFFFFF;
+  text-transform: lowercase;
+  margin-top: 2.14286em;
+}
+
+.two_way-order .thumbnail {
+  border: none;
+  text-align: center;
+}
+
+.two_way-order .thumbnail img {
+  height: 60px;
+}
+
+.two_way-order .thumbnail .caption h4 {
+  color: #23D16A;
+}
+
+.two_way-order .thumbnail .subsciption {
+  font-family: 'rubikmedium';
+  color: #23D16A;
+}
+
+.three_easy-meal img {
+  margin-top: -100px;
+}
+
+.three_easy_meal_options .media {
+  margin-top: 1.07143em;
+  margin-bottom: 2.14286em;
+}
+
+.three_easy_meal_options .media-left {
+  vertical-align: top;
+}
+
+.three_easy_meal_options .btn {
+  margin-top: -15px;
+}
+
+.delivery_pickup {
+  color: #FFFFFF;
+}
+
+.delivery_pickup h2 {
+  color: #FFFFFF;
+}
+
+.delivery_pickup dt {
+  font-size: 1.57143em;
+}
+
+.delivery_pickup dd {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1420px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .making_delivery_convenient___simple_ .H-icons-block .H-icons img {
+    width: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .making_delivery_convenient___simple_ .H-icons-block .H-icons img {
+    width: 10px;
+    margin-bottom: 15px;
   }
 }
 /*# sourceMappingURL=main.css.map */

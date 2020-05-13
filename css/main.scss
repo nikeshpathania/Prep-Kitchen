@@ -85,6 +85,118 @@ $line-height: em($line-height-px, $font-size-body-px);
   line-height: em($line-height, $font-size);
 }
 
+
+
+//
+//  MEDIA QUERIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xlg: 1400px
+);
+
+
+//
+//  RESPOND ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  RESPOND BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-below(sm) {}
+@mixin respond-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  RESPOND BETWEEN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-between(sm, md) {}
+@mixin respond-between($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -100,6 +212,7 @@ $line-height: em($line-height-px, $font-size-body-px);
     -ms-text-size-adjust: 100%;
     padding: 0;
     margin: 0;
+    text-transform: lowercase;
     color: map-get($colors , light-fontColor );
   }
 .header-hero { 
@@ -113,6 +226,8 @@ $line-height: em($line-height-px, $font-size-body-px);
   font-family: 'rubikmedium';
   position: relative;
 
+
+
   .header-hero-contentBlock {
 
     max-width: 500px;
@@ -120,6 +235,8 @@ $line-height: em($line-height-px, $font-size-body-px);
     bottom: 10%;
     left: 25%;
     transform: translateX(-20%);
+
+
 
     .subheading {
       font-family: 'rubikregular';
@@ -293,7 +410,8 @@ section {
 
   .media-middle 
   img{
-    width: 100px;
+    width: 75px;
+    margin-right: 15px;
   }
 
   .making_delivery_convenient___simple_ {
@@ -306,16 +424,21 @@ section {
     }
     .H-icons-block {
       overflow: hidden;
+
       .H-icons {
         width: 100px;
+        min-height: 100px;
         margin: 0 15px;
         float: left;
         text-align: center;
+        
         img {
           width: 50px;
           margin-bottom:15px;
+
         }
-        p{
+
+        p {
           padding:0;
         }
       }
@@ -372,14 +495,15 @@ section {
     .review_author {
       font-weight: bold;
     }
-    
   }
 }
    
 
 
 .delivery_option {
-  
+  background: url(../images/pk-1-01.svg);
+  background-size: 100%;
+  overflow: hidden;
   .bg {
     width: 100%;
     position: absolute;
@@ -475,10 +599,13 @@ section {
   @extend .subscribe_block;
   background-color: map-get($colors , primary);
   color: map-get($colors , whiteColor );
-  padding: 30px 0;
+  margin-top:15px;
+  margin-bottom:15px;
+
   .label {
     font-weight: normal;
   }
+
   .form-control {
     width: 300px;
     margin-left: em(10);
@@ -526,6 +653,9 @@ footer {
   }
 }
 // Bootstrap Update
+.navbar {
+  margin: 0;
+}
 .media-body, .media-left, .media-right{
   vertical-align: middle;
   color: map-get($colors , dark-fontColor );
@@ -667,4 +797,98 @@ footer {
     }
 }
 
+}
+
+
+.page-header{
+  margin: 0;
+  background: url(../images/pk-green-1-01.svg) no-repeat;
+  background-size: 100%;
+  min-height: 200px;
+
+
+  .page-title {
+    font-family: 'rubikmedium';
+    max-width: 400px;
+    color: map-get($colors , whiteColor);
+    text-transform: lowercase;
+    margin-top: em(30);
+  }
+ 
+}
+.two_way-order{
+  .thumbnail {
+    border: none;
+    text-align: center;
+
+    img{ height: 60px;}
+
+    .caption {
+      h4 {
+        color: map-get($colors , primary );
+      }
+    }
+    .subsciption {
+      font-family: 'rubikmedium';
+      color: map-get($colors , primary );
+      
+    }
+  }
+}
+
+.three_easy-meal {
+  img {
+    margin-top: -100px;
+  }
+}
+.section-heading {
+  @extend .sub-heading;
+}
+.three_easy_meal_options {
+  .media {
+    margin-top: em(15);
+    margin-bottom: em(30);
+  }
+  .media-left {vertical-align: top;}
+  .btn {
+    margin-top: -15px;
+  }
+}
+
+.delivery_pickup {
+  color: map-get($colors , whiteColor );
+  h2 {
+    @extend .sub-heading;
+    color: map-get($colors , whiteColor );
+  }
+  dt{
+    font-size: em(22);
+  }
+  dd {
+    margin-bottom: 30px;
+  }
+  
+}
+
+@include respond-above(xlg){
+  .container{
+    max-width: 1420px;
+    width: 100%;
+  }
+}
+
+
+
+@include respond-above(md) {
+  .making_delivery_convenient___simple_ .H-icons-block .H-icons img {
+      width: 20px;
+      margin-bottom: 15px;
+  }
+}
+
+@include respond-above(sm) {
+  .making_delivery_convenient___simple_ .H-icons-block .H-icons img{
+      width: 10px;
+      margin-bottom: 15px;  
+  }
 }
