@@ -1,6 +1,11 @@
 @import url(../fonts/fontsFace.css);
 /* font size & line height in px */
 /* calculate font-size (in %) and line-height (in em) */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 @media all {
   body {
     font-family: 'rubiklight';
@@ -83,7 +88,7 @@
   }
   .btn {
     border: 1px solid transparent;
-    font-size: 1.28571rem;
+    font-size: 1.42857rem;
     min-width: 150px;
   }
   .btn-white {
@@ -128,10 +133,10 @@
   .nav-container #top-right .search-icon svg .a {
     fill: #707070;
   }
-  .nav-container #top-right .btn_block {
+  .nav-container #top-right .btn_group {
     float: left;
   }
-  .nav-container #top-right .btn_block .btn-black {
+  .nav-container #top-right .btn_group .btn-black {
     background-color: #464646;
     color: #FFFFFF;
   }
@@ -184,6 +189,7 @@
   }
   .making_delivery_convenient___simple_ {
     text-transform: lowercase;
+    font-size: 1.14286em;
   }
   .making_delivery_convenient___simple_ .section-heading {
     text-align: left;
@@ -308,6 +314,12 @@
     padding: 1.07143em 0;
     background-color: #F4F4F4;
     text-align: center;
+    font-size: 1.14286em;
+  }
+  .subscribe_block .btn, .newsletter_block .btn {
+    font-size: 1.14286em;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .what_popular {
     margin-top: 2.85714em;
@@ -372,6 +384,9 @@
   .media-body .media-heading, .media-left .media-heading, .media-right .media-heading {
     font-size: 1.71429em;
   }
+  .media-body p, .media-left p, .media-right p {
+    font-size: 1.07143em;
+  }
   #carousel-example-generic {
     margin-top: -100px;
   }
@@ -390,21 +405,140 @@
     width: 20px;
     float: left;
   }
-  .float-left svg {
+  .float-left .menu-btn {
+    width: 25px;
     margin-top: 15px;
+    cursor: pointer;
   }
-  .big {
-    font-size: 114.28571%;
+  #overlay {
+    position: fixed;
+    background: #131313;
+    padding: 2em;
+    width: 350px;
+    height: 100vh;
+    z-index: 999;
+    display: none;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-box-shadow: 0 5px 10px #000;
+            box-shadow: 0 5px 10px #000;
+    -webkit-animation: reverse-opacity 5s ase-in-out;
+            animation: reverse-opacity 5s ase-in-out;
   }
-  small {
-    font-size: 0.85714em;
+  #overlay .close-btn {
+    float: right;
+    width: 22px;
+    opacity: 0;
+    cursor: pointer;
   }
-  div.info {
-    font-size: 178.57143%;
+  #overlay .site-Menu {
+    list-style: none;
+    font-size: 1.42857em;
+    margin: 10% auto 0 auto;
+    padding: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (100%)[1];
+        grid-template-columns: repeat(1, 100%);
+    width: 80%;
   }
-  /* You have to set a new reference when using pc() or em() */
-  div.info .description {
-    font-size: 48%;
+  #overlay .site-Menu li {
+    opacity: 0;
+    margin-top: 8px;
+  }
+  #overlay .site-Menu a {
+    color: #FFFFFF;
+  }
+  .show-menu {
+    display: block !important;
+    -webkit-animation: slide-menu .5s ease-in forwards;
+            animation: slide-menu .5s ease-in forwards;
+  }
+  .show-menu .close-btn {
+    -webkit-animation: show-x .5s .1s forwards;
+            animation: show-x .5s .1s forwards;
+  }
+  .show-menu li {
+    -webkit-animation: menu-item-anim .5s forwards .5s ease-in-out;
+            animation: menu-item-anim .5s forwards .5s ease-in-out;
+  }
+  @-webkit-keyframes slide-menu {
+    from {
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+    }
+    to {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+    }
+  }
+  @keyframes slide-menu {
+    from {
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+    }
+    to {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+    }
+  }
+  @-webkit-keyframes show-x {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes show-x {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes reverse-opacity {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes reverse-opacity {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes menu-item-anim {
+    from {
+      -webkit-transform: translateY(60%);
+              transform: translateY(60%);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes menu-item-anim {
+    from {
+      -webkit-transform: translateY(60%);
+              transform: translateY(60%);
+      opacity: 0;
+    }
+    to {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 /*# sourceMappingURL=main.css.map */

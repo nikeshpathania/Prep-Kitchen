@@ -13,6 +13,7 @@ $colors: (
 
   light-fontColor: #777777,
   whiteColor: #FFFFFF,
+  bg-color: darken( #464646, 20%)
 );
 
 @function color($color-name) {
@@ -83,6 +84,11 @@ $line-height: em($line-height-px, $font-size-body-px);
 @mixin line-height($line-height: $line-height-px, $font-size: $font-size-body-px) {
   line-height: em($line-height, $font-size);
 }
+
+* {
+  box-sizing: border-box;
+}
+
 
 @media all
 {
@@ -177,7 +183,7 @@ $line-height: em($line-height-px, $font-size-body-px);
 
 .btn {
   border: 1px solid transparent;
-  font-size: rem(18);
+  font-size: rem(20);
   min-width: 150px;
 }
 
@@ -225,10 +231,11 @@ $line-height: em($line-height-px, $font-size-body-px);
           }
       }
     }
-    .btn_block {
+    .btn_group {
       float: left;
       
       .btn-black {
+       
         background-color: map-get($colors , dark-fontColor);
         color: map-get($colors , whiteColor );
       }
@@ -291,6 +298,7 @@ section {
 
   .making_delivery_convenient___simple_ {
     text-transform: lowercase;
+    font-size: em(16);
   
     .section-heading {
       @extend .sub-heading;
@@ -440,6 +448,12 @@ section {
   padding:em(15) 0;
   background-color: map-get($colors , light-gray);
   text-align: center;
+  font-size: em(16);
+  .btn {
+    font-size: em(16);
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 
@@ -519,6 +533,9 @@ footer {
   .media-heading {
     font-size: em(24);
   }
+   p{
+     font-size: em(15);
+   }
 }
 
 #carousel-example-generic {
@@ -542,32 +559,112 @@ footer {
 .float-left {
   width:20px;
   float: left;
-  svg {
+
+  .menu-btn {
+    width: 25px;
     margin-top: 15px;
+    cursor: pointer;
+   
   }
 }
 
+#overlay {
+    position:fixed;
+    background: map-get($colors , bg-color );
+    padding: 2em;
+    width: 350px;
+    height: 100vh;
+    z-index: 999;
+    display: none;
 
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: 0 5px 10px #000;
 
+    animation: reverse-opacity 5s ase-in-out;
 
+    .close-btn {
+        float: right;
+        width: 22px;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .site-Menu {
+        list-style: none;
+        font-size: em(20);
+        margin: 10% auto 0 auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        width: 80%;
 
-
-
-
-
-  .big {
-    font-size: pc(16);
+            li {
+                opacity: 0;
+                margin-top: 8px;
+            }
+    
+        a {
+            color: map-get($colors , whiteColor );
+            
+        }
   }
-  small {
-    font-size: em(12);
-  }
 
-  div.info {
-    font-size: pc(25);
-  }
+}
+.show-menu {
+    display: block!important;
+    animation: slide-menu .5s ease-in forwards;
 
-  /* You have to set a new reference when using pc() or em() */
-  div.info .description {
-    font-size: pc(12,25);
-  }
+
+    .close-btn {
+        animation: show-x .5s .1s forwards;
+
+
+    }
+
+    li{
+        animation: menu-item-anim .5s forwards .5s ease-in-out;
+    }
+  
+
+
+}
+
+@keyframes  slide-menu {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes  show-x {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes  reverse-opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes menu-item-anim {
+    from {
+        transform: translateY(60%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 }
