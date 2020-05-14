@@ -9,11 +9,13 @@ $colors: (
   peachColor: #B7B7B7,
   skinColor: #EAAD7F,
   dark-fontColor: #464646,
+
   light-gray: #F4F4F4,
 
   light-fontColor: #777777,
   whiteColor: #FFFFFF,
-  bg-color: darken( #464646, 20%)
+  bg-color: darken( #464646, 20%),
+  btn-submit: #A8A8A8
 );
 
 @function color($color-name) {
@@ -21,8 +23,8 @@ $colors: (
 }
 
 
-/* font size & line height in px */
-$font-size-body-px: 14;
+/*font size & line height in px */
+$font-size-body-px: 16;
 $line-height-px: 21;
 
 /* calculate font-size (in %) and line-height (in em) */
@@ -201,13 +203,16 @@ $breakpoints: (
   box-sizing: border-box;
 }
 
+body, html {
+  font-size: 16px;
+}
 
 @media all
 {
 
   body {
     font-family: 'rubiklight';
-    font-size: $font-size-body;
+   
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     padding: 0;
@@ -215,6 +220,7 @@ $breakpoints: (
     text-transform: lowercase;
     color: map-get($colors , light-fontColor );
   }
+
 .header-hero { 
   background-color: map-get($colors , primary);
   background-image: url(../images/header.png);
@@ -241,11 +247,11 @@ $breakpoints: (
     .subheading {
       font-family: 'rubikregular';
       color: map-get($colors, whiteColor );
-      margin-bottom:rem(16);
+      margin-bottom:em(16);
       display: block;
     }
     h1 {
-      font-size: rem(60);
+      font-size: em(40);
       font-family: 'rubikmedium';
       color: map-get($colors, whiteColor );
       margin-top: 0;
@@ -300,7 +306,7 @@ $breakpoints: (
 
 .btn {
   border: 1px solid transparent;
-  font-size: rem(20);
+  font-size: rem(16);
   min-width: 150px;
 }
 
@@ -309,6 +315,14 @@ $breakpoints: (
   background-color: map-get($colors, whiteColor );
   color: map-get($colors , primary );
   padding:15px 20px;
+  border:none;
+}
+
+.btn-grey {
+  border-radius: 50px;
+  background-color: map-get($colors, btn-submit );
+  color: map-get($colors , whiteColor );
+  
   border:none;
 }
 
@@ -324,7 +338,7 @@ $breakpoints: (
     width:calc(100% - 50px);
     float: left;
     text-align: center;
-    svg {
+    img {
       width: 100px;
       transform: translateX(-50px);
       margin:6px auto;
@@ -656,6 +670,10 @@ footer {
 .navbar {
   margin: 0;
 }
+.navbar-default {
+  background: transparent;
+  border: transparent;
+}
 .media-body, .media-left, .media-right{
   vertical-align: middle;
   color: map-get($colors , dark-fontColor );
@@ -685,7 +703,11 @@ footer {
   }
 }
 
+.panel-default>.panel-heading {
+  background: #E8E8E8;
+}
 
+// Slide Menu
 .float-left {
   width:20px;
   float: left;
@@ -798,7 +820,7 @@ footer {
 }
 
 }
-
+// End Slide Menu
 
 .page-header{
   margin: 0;
@@ -809,7 +831,7 @@ footer {
 
   .page-title {
     font-family: 'rubikmedium';
-    max-width: 400px;
+    
     color: map-get($colors , whiteColor);
     text-transform: lowercase;
     margin-top: em(30);
@@ -841,9 +863,11 @@ footer {
     margin-top: -100px;
   }
 }
+
 .section-heading {
   @extend .sub-heading;
 }
+
 .three_easy_meal_options {
   .media {
     margin-top: em(15);
@@ -870,6 +894,100 @@ footer {
   
 }
 
+// 
+.author_name{ 
+  @extend .sub-heading;
+  color: map-get($colors , primary);
+  margin-bottom: 0;
+}
+
+.author_speciality{
+  font-size: em(20);
+  color: map-get($colors , primary);
+}
+
+.author_img {
+  width:80%;
+  margin: 0 auto;
+}
+
+.coaching_plan  {
+  .thumbnail{
+
+    border:none;
+    max-width:300px;
+
+    .thumbnail_container {
+      background: url(../images/pk-green-1-01.svg) no-repeat;
+      background-size: cover;
+      color: map-get($colors , whiteColor);
+      text-align: center;
+      margin-bottom:5px;
+
+      img {
+        margin-top: 10px;
+      }
+    
+    .caption {
+      color: map-get($colors , whiteColor);
+      text-align: center;
+      font-size: em(18);
+      h3 {
+        font-weight: 800;
+        font-size: em(14);
+      }
+    }
+      .badge {
+        font-size: em(30);
+        background: transparent;
+      }
+      
+    }
+    
+    
+  }
+}
+
+.heading_3 {
+  @extend .author_speciality;
+}
+.faq {
+  h3{
+    font-family: 'rubikmedium';
+  }
+  .panel-default { 
+    border: none;
+    box-shadow: none;
+  }
+
+  .panel-title i {
+    float:right;
+    font-weight: 100;
+    font-size: em(12);
+  }
+  
+  // .panel-heading.active {
+  //   background-color: map-get($colors , primary);
+  // }
+  .faq_about  {
+    .panel-heading.active {
+      background-color: map-get($colors , primary);
+    }
+    .panel-heading.active a {
+      color: map-get($colors , whiteColor);
+    }
+  }
+
+  .form-control{
+    margin-left: em(10);
+    border-radius: 23px;
+    background-color: map-get($colors , white );
+    
+  }
+  
+}
+
+
 @include respond-above(xlg){
   .container{
     max-width: 1420px;
@@ -877,18 +995,12 @@ footer {
   }
 }
 
-
-
-@include respond-above(md) {
-  .making_delivery_convenient___simple_ .H-icons-block .H-icons img {
-      width: 20px;
-      margin-bottom: 15px;
-  }
-}
-
 @include respond-above(sm) {
   .making_delivery_convenient___simple_ .H-icons-block .H-icons img{
-      width: 10px;
+      width: 80px;
       margin-bottom: 15px;  
   }
 }
+
+
+
