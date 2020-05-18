@@ -168,6 +168,9 @@ html {
     background-color: #464646;
     color: #FFFFFF;
   }
+  .nav-container #top-right .btn_group .btn-black a {
+    color: #FFFFFF;
+  }
   .nav-container #top-right .cart-item {
     float: right;
     padding: 15px;
@@ -205,7 +208,7 @@ html {
     color: #777777;
     letter-spacing: -0.2px;
   }
-  .sub-heading, .making_delivery_convenient___simple_ .section-heading, .section-heading, .delivery_pickup h2, .author_name, .green_heading3 {
+  .sub-heading, .making_delivery_convenient___simple_ .section-heading, .section-heading, .delivery_pickup h2, .author_name, .green_heading3, .simple_recurring_meal h2 {
     font-family: 'rubikmedium';
     font-size: 2.1875em;
     margin-bottom: 0.625em;
@@ -490,7 +493,6 @@ html {
   #overlay {
     position: fixed;
     background: #131313;
-    padding: 2em;
     width: 350px;
     height: 100vh;
     z-index: 999;
@@ -505,28 +507,46 @@ html {
             animation: reverse-opacity 5s ase-in-out;
   }
   #overlay .close-btn {
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    right: -20px;
+    top: 0;
     float: right;
-    width: 22px;
+    width: 30px;
     opacity: 0;
     cursor: pointer;
   }
+  #overlay .user_login {
+    background: #131313;
+    font-style: italic;
+    padding: 15px 5px;
+  }
   #overlay .site-Menu {
+    width: 100%;
+    position: fixed;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+  }
+  #overlay .site-Menu ul {
     list-style: none;
-    font-size: 1.25em;
-    margin: 10% auto 0 auto;
+    font-size: 0.875em;
+    margin: 0 auto 0 auto;
     padding: 0;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (100%)[1];
         grid-template-columns: repeat(1, 100%);
-    width: 80%;
   }
-  #overlay .site-Menu li {
+  #overlay .site-Menu ul li {
+    padding: 5px 10px;
     opacity: 0;
     margin-top: 8px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+    text-transform: capitalize;
   }
-  #overlay .site-Menu a {
-    color: #FFFFFF;
+  #overlay .site-Menu ul a {
+    color: #F5F5F5;
   }
   .show-menu {
     display: block !important;
@@ -818,6 +838,99 @@ html {
 
 .prduct_container .product_expand .expand {
   display: none;
+}
+
+.product_detail .product_image .brandLogoBg {
+  background: url(../images/tpk_logo_transparent_04.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: -78px;
+  background-position-y: -50px;
+  width: 500px;
+  height: 500px;
+}
+
+.product_detail .product_image .brandLogoBg img {
+  width: 400px;
+  position: absolute;
+  margin-top: 120px;
+}
+
+.product_detail .product_detail_price .p_green_text {
+  color: #23D16A;
+}
+
+.product_detail .product_detail_price .p_sku_block {
+  margin-top: 1.25em;
+}
+
+.product_detail .product_detail_price .p_sku_block .skuName, .product_detail .product_detail_price .p_sku_block .title, .product_detail .product_detail_price .p_sku_block .price {
+  font-family: 'rubikmedium';
+  font-size: 1.875em;
+}
+
+.product_detail .product_detail_price .p_sku_block .title {
+  font-family: 'rubikregular';
+}
+
+.product_detail .product_detail_price .p_sku_block .price {
+  margin-top: 1.25em;
+  margin-bottom: 0.625em;
+}
+
+.product_detail .product_detail_price .shortDescription {
+  font-size: 0.875em;
+}
+
+.product_detail .product_detail_price .more_items {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.product_detail .product_detail_price .more_items img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.product_detail .product_detail_price .product_qty {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  overflow: hidden;
+}
+
+.product_detail .product_detail_price .product_qty .quantity.buttons_added .minus,
+.product_detail .product_detail_price .product_qty .quantity.buttons_added .plus {
+  padding: 10px 15px;
+  height: 45px;
+}
+
+.product_detail .product_detail_price .product_qty .quantity .input-text.qty {
+  height: 45px;
+  width: 100px;
+  background: #F4F4F4;
+}
+
+.product_detail .product_detail_price .not_include {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product_detail .product_detail_price .panel-default > .panel-heading {
+  background: none;
+}
+
+.product_detail .product_detail_price .panel-default {
+  border: none;
+}
+
+.product_detail .product_detail_price .panel-title {
+  font-size: 1.5em;
+  color: #23D16A;
+}
+
+.product_detail .product_detail_price .panel-title .glyphicon {
+  font-size: 16px;
 }
 
 .steps {
@@ -1302,6 +1415,333 @@ html {
   height: 100%;
   top: 0;
   right: 5%;
+}
+
+.S_img_block {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.S_img_block .img {
+  text-align: center;
+}
+
+.S_img_block .img_2, .S_img_block .img_3 {
+  position: absolute;
+  width: 450px;
+  height: 300px;
+  left: 140px;
+  top: 200px;
+  z-index: 2;
+}
+
+.S_img_block .img_2 img, .S_img_block .img_3 img {
+  width: 100%;
+}
+
+.S_img_block .img_3 {
+  width: 350px;
+  left: -90px;
+  top: 150px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.simple_recurring_meal {
+  background: #23D16A;
+  color: #FFFFFF;
+  padding: 0.9375em;
+}
+
+.simple_recurring_meal h2 {
+  color: #FFFFFF;
+}
+
+.simple_recurring_meal .simple_recurring_meal_steps {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.simple_recurring_meal .simple_recurring_meal_steps li {
+  float: left;
+  width: 150px;
+  margin-right: 8px;
+}
+
+.simple_recurring_meal .simple_recurring_meal_steps li span {
+  display: block;
+  font-size: 3.4375em;
+  text-decoration: underline;
+}
+
+.simple_recurring_meal .simple_recurring_meal_steps li p {
+  font-size: 0.875em;
+}
+
+.how_it_works {
+  list-style: none;
+  counter-reset: section;
+  margin-top: 0.9375em;
+  overflow: hidden;
+}
+
+.how_it_works li {
+  width: 30%;
+  min-height: 100px;
+  position: relative;
+  padding-top: 70px;
+  float: left;
+}
+
+.how_it_works li:before {
+  border: 1px solid #23D16A;
+  padding: 10px 18px;
+  border-radius: 50%;
+  counter-increment: section;
+  content: counter(section);
+  position: absolute;
+  left: 60px;
+  margin-top: -60px;
+}
+
+.how_it_works li div {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #464646;
+}
+
+.how_it_works li p {
+  font-size: 0.75em;
+}
+
+.card_group {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.card_group .card {
+  float: left;
+  width: 25%;
+  padding: 15px 15px;
+  text-align: center;
+  border: 1px solid #F4F4F4;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.card_group .card img {
+  width: 40px;
+}
+
+.card_group .card:hover {
+  -webkit-box-shadow: 0 0px 5px #23D16A;
+          box-shadow: 0 0px 5px #23D16A;
+}
+
+.card_group .card .card-body .card-title {
+  font-family: 'rubikmedium';
+  color: #464646;
+  font-size: 1em;
+}
+
+.reward_image {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.reward_image img {
+  width: 100%;
+}
+
+.reward_image .reward_caption {
+  color: #FFFFFF;
+  position: absolute;
+  max-width: 300px;
+  top: 150px;
+  left: 5%;
+  font-size: 1em;
+  overflow: hidden;
+}
+
+.reward_image .reward_caption h3 {
+  font-size: 1.5625em;
+}
+
+.price_table thead th {
+  text-transform: uppercase;
+  text-align: center;
+  color: #464646;
+}
+
+.price_table thead th small {
+  display: block;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.price_table thead th:nth-of-type(1) {
+  text-align: left;
+}
+
+.price_table tbody td {
+  text-align: center;
+}
+
+.price_table tbody td:nth-of-type(1) {
+  text-align: left;
+}
+
+.reedam_for_product .slide {
+  -webkit-transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
+  transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
+}
+
+.reedam_for_product .slide_control {
+  position: relative;
+}
+
+.reedam_for_product .slide_control .w3-display-left, .reedam_for_product .slide_control .w3-display-right {
+  background: none;
+  border: none;
+  color: #23D16A;
+  font-size: 24px;
+}
+
+.reedam_for_product .slide_control .w3-display-left {
+  position: absolute;
+  top: 100px;
+  z-index: 2;
+}
+
+.reedam_for_product .slide_control .w3-display-right {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  z-index: 2;
+}
+
+.reedam_for_product .r_product_caption {
+  padding: 10px;
+  text-align: center;
+}
+
+.reedam_for_product .r_product_caption .r_prodcut_title {
+  font-size: 0.875em;
+  font-weight: bold;
+}
+
+.reedam_for_product .r_product_caption .r_points {
+  text-transform: uppercase;
+  color: #23D16A;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.total_points {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1.5625em;
+  text-transform: uppercase;
+  font-family: 'rubikmedium';
+  color: #464646;
+}
+
+.discount_number {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.discount_number li {
+  display: inline-block;
+  padding: 0 21px;
+  position: relative;
+  color: #464646;
+}
+
+.discount_number li:after {
+  content: '';
+  border-right: 1px solid #23D16A;
+  height: 80%;
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+
+.discount_number li:last-child:after {
+  display: none;
+}
+
+.discount_number li span {
+  display: block;
+  width: 100%;
+  color: #23D16A;
+  font-size: 1.875em;
+  font-weight: bold;
+}
+
+.MultiCarousel {
+  float: left;
+  overflow: hidden;
+  padding: 15px;
+  width: 100%;
+  position: relative;
+}
+
+.MultiCarousel .MultiCarousel-inner {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+  float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item > div {
+  text-align: center;
+  padding: 0px;
+  margin: 10px;
+}
+
+.MultiCarousel .leftLst,
+.MultiCarousel .rightLst {
+  position: absolute;
+  border-radius: 50%;
+  top: calc(50% - 20px);
+  background: none;
+  border: none;
+  color: #23D16A;
+  font-size: 2.5em;
+}
+
+.MultiCarousel .leftLst {
+  left: 0;
+}
+
+.MultiCarousel .rightLst {
+  right: 0;
+}
+
+.MultiCarousel .leftLst.over,
+.MultiCarousel .rightLst.over {
+  pointer-events: none;
+  background: none;
+  border: 0;
+  color: #464646;
+  font-size: 2.5em;
+}
+
+@media (max-width: 575px) {
+  .page-header {
+    min-height: auto;
+  }
+  .page-header .page-title {
+    margin-top: 10px;
+  }
 }
 
 @media (min-width: 1400px) {

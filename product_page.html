@@ -16,7 +16,14 @@
   <header>
     <div id="overlay">
         <img class="close-btn" id="close-menu" src="images/close-menu.svg" alt="">
-        <ul class="site-Menu">
+        <div class="user_login">Hello, thomas</div>
+        <div class="site-Menu">
+        
+          <ul class="M_site-Menu">
+            <li><a href="myaccount.html">My Account</a></li>
+            <li><a href="myaccount.html">Re-Order Previous</a></li>
+          </ul>
+        <ul class="D_site-Menu">
           <li><a href="/">Home</a></li>
           <li><a href="how_it_works.html">How It Works Page</a></li>
           <li><a href="product_page.html">Product</a></li>
@@ -30,13 +37,13 @@
           <li><a href="join.html">Join</a></li>
           <li><a href="start_subscription.html">Start a Subscription</a></li>
           <li><a href="plan.html">Plan</a></li>
-          <li><a href="myaccount.html">My Account</a></li>
+        
           <li><a href="custom_order.html">Custom Order</a></li>
           <li><a href="custom_order1.html">Custom Order1</a></li>
-              
-      </ul>
+      </ul> 
     </div>
-    
+    </div>
+  
     <nav class="navbar navbar-default" data-aos="slide-up">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,7 +68,7 @@
                     Re-order Previous
                   </button>
                   <button class="btn btn-black">
-                    My Account
+                    <a href="myaccount.html"> My Account</a>
                   </button>
                 </div>
                   <div class="cart-item"><span class="badge">0</span>
@@ -79,120 +86,177 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
-<section class="page-header" data-aos="zoom-in">
+
+<section class="product_detail">
   <div class="container">
-    
-    <h2 class="page-title">Meal prepping<br>
-      Made real simple.</h2>
-  </div>
-  
-</section>  
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="product_image">
+        <div class="brandLogoBg">
+          <!-- <img src="images/tpk_logo_transparent_04.svg" alt=""> -->
+          <img src="images/shrimp_brocoli.png" width="400" alt="">
+        </div>
+        
+      </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="product_detail_price">
 
+        <div class="p_green_text">Home Prepped Meals #10 Shrimp, Jasmine Rice & Broccoli</div>
+        <div class="p_sku_block">
+          <div class="skuName">Meal #1</div>
+          <div class="title">Grilled shrimp, broccoli & Jasmin rice</div>
+        
+        <div class="price">$11.00</div>
+      </div>
+      <div class="shortDescription">Meal Includes: 6oz Grilled Chicken | 6oz Sweet Potatoes | 3oz Zucchini Nutrition Facts: Calories: 467.25 | Protein: 56.85g | Carbs: 39.3g</div>
+      <ul class="more_items">
+        <li>
+          <span><img src="images/dsc3476.jpg" alt="">Shirmp</span>
+        </li>
+        <li>
+          <span><img src="images/dsc3480.jpg" alt="">Broccoli</span>
+        </li>
+        <li>
+          <span><img src="images/dsc3525.jpg" alt="">Jasmin rice</span>
+        </li>
+      </ul>
+      <div class="product_qty">
+        <label class="col-sm-12">Quantity</label>
 
+        <div class="col-sm-12 quantity buttons_added">
+            <input type="button" value="-" class="minus">
+            <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+            <input type="button" value="+" class="plus">
+        </div>
 
-<section class="delivery_option clearfix" data-aos="slide-up">
-  
-  <div class="col-sm-6">
-    <div class="col-sm-10 col-sm-offset-2">
-      <div class="delivery_pickup">
-    <h2 >Delivery or pickup</h2>
-    <dl>
-      <dt>National shipping</dt>
-      <dd>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id.</dd>
-      <dt>Straight to door service</dt>
-      <dd>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id.</dd>
-      <dt>Pickup near you</dt>
-      <dd>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id.</dd>
-  </dl>
-  </div>
-</div>
-</div>
-  <div class="col-sm-6">
-    <div class="row"><img src="images/111319_food_session_19.jpg" class="img-responsive" alt=""></div>
-  </div>
-  
-</section>
+    </div>
 
-<section class="what_popular clearfix" data-aos="slide-up">
-  
-    <div class="container">
-      <div class="col-sm-8 col-sm-offset-2">
-      <div class="three_easy_meal_options">
-        <h2 class="section-heading text-center">Enjoy your delicious food.</h2>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="images/group_90.svg" alt="">
+    <div><button class="btn btn-green">Add To Cart</button></div>
+    <div class="not_include">
+      <img src="images/group_216.jpg" alt="">
+      
+    </div>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              details
             </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Bulk basics</h4>
-            <p>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id, pri eu regione sanctus praesent. Adhuc possim eu nec, sea ne velit quodsi impedit.</p>
-           
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
           </div>
         </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="images/group_103.svg" alt="">
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              ingredients
             </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Earn rewards.</h4>
-            <p>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id, pri eu regione sanctus praesent. Adhuc possim eu nec, sea ne velit quodsi impedit.</p>
-           
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
           </div>
         </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="images/group_108.svg" alt="">
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              instructions
             </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Refine your health with nutritional coaching.</h4>
-            <p>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id, pri eu regione sanctus praesent. Adhuc possim eu nec, sea ne velit quodsi impedit.</p>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            <div class="col-sm-3">
+              <img src="images/group_90.svg" alt="">
+            </div>
+            <div class="col-sm-6">
+              <h3 style="margin-top: 0; margin-bottom: 5px;">Microwave</h3>
+            <ul style="list-style: none; margin: 0; padding: 0;">
+              <li>Loosen lid</li>
+              <li>High power</li>
+              <li>1 - 1:30 minutes</li>
+            </ul>
+            </div>
             
           </div>
         </div>
-        <div class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="images/path_123.svg" alt="">
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+              Nutrition
             </a>
+          </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
           </div>
-          <div class="media-body">
-            <h4 class="media-heading">Our snacks are no joke.</h4>
-            <p>Lorem ipsum dolor sit amet, aliquid dolorem est in, eos iuvaret numquam ad, in vix meis persius deseruisse. Dolorum fastidii convenire vel id, pri eu regione sanctus praesent. Adhuc possim eu nec, sea ne velit quodsi impedit.</p>
-            
-          </div>
-		</div>
-		
-	  </div>
-	  </div>
-	  <div class="col-sm-10 col-sm-offset-1">
-	  <div class="content">
-		<p> We not only care about how you want to look on the outside but also how you want to feel on the inside. Because of our responsibly sourced, non-GMO, and high-quality ingredients, youll feel great after each bite. You dont have to worry about any refined sugars, dairy or gluten hiding in your food. And our fresh, seasonal vegetables are picked up daily. We give you the best so that you can be your best.
-	   </p>
-		 <p class="green_text">Order from our 3 delicious meal opti</p>
-	   </div>
-	   
-	   <div id="group_26" class="text-center">
-		 <button  class="btn btn-green">
-		   Bulk Basics
-		 </button>
-		 <button class="btn btn-green">
-		   Prepped Meals
-		 </button>
-				 <button class="btn btn-green">
-		   Build Your Meal
-		 </button>
- 
-		</div>
-	</div>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
+  </div>
+</section>
+<section class="what_popular clearfix" >
+  
+  <div class="container">
+  <div class="row">
+    <h2 class="sub-heading text-center">Other delicious prepped meals</h2>
+    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-4" data-aos="zoom-in">
+      <div class="thumbnail">
+        <img src="images/_010220_jan_food_2.png" alt="">
+        <div class="caption text-center">
+          <h3>Ground Turkey, Jasmin Rice,
+            & Green Beans.</h3>
+          
+          <p><a href="#" class="btn btn-green" role="button">Add to Cart</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4" data-aos="zoom-in">
+      <div class="thumbnail">
+        <img src="images/_102919_december_prep_2.png" alt="">
+        <div class="caption text-center">
+          <h3>Wild Caught Shrimp</h3>
+          
+          <p><a href="#" class="btn btn-green" role="button">Add to Cart</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4" data-aos="zoom-in">
+      <div class="thumbnail">
+        <img src="images/_110419_food_photos_8.png" alt="">
+        <div class="caption text-center">
+          <h3>Cod, Brown Rice, & Asparagus</h3>
+          
+          <p><a href="#" class="btn btn-green" role="button">Add to Cart</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 </section>
+
 <section>
   <div class="newsletter_block">
   <div class="container">
@@ -209,7 +273,7 @@
 </section>
 <footer>
 <div class="container">
-  <div class="col-sm-3" data-aos="fade-up">
+  <div class="col-sm-3" data-aos="zoom-in">
     <h3>Menu</h3>
     <ul>
       <li><a href=""> Bulk basics</a></li>
@@ -223,7 +287,7 @@
 
     </ul>
   </div>
-  <div class="col-sm-3" data-aos="fade-up">
+  <div class="col-sm-3" data-aos="zoom-in">
     <h3>Contact Us</h3>
     <ul><li>
       us Follow us Instagram 214-876-1653
@@ -231,12 +295,12 @@
     </li>
   <li> <a href="mailto:info@dallasprepkitchen.com"> info@dallasprepkitchen.com</a></li></ul>
   </div>
-  <div class="col-sm-3" data-aos="fade-up">
+  <div class="col-sm-3" data-aos="zoom-in">
     <h3>Follow Us</h3>
     <div class="social_media"><img src="images/instagram_ek1.png" alt=""> <img src="images/facebook_f.png" alt=""> <img src="images/youtube.png" alt=""></div>
 
   </div>
-  <div class="col-sm-3" data-aos="fade-up">
+  <div class="col-sm-3" data-aos="zoom-in">
     <h3>Instagram</h3>
     <div class="instagram_block"><img src="images/img_5286.png" alt=""></div>
   </div>
@@ -247,8 +311,23 @@
 </footer>
 
 <script>
+  var count = 1;
+  var countEl = document.getElementById("count");
 
+  document.querySelector('.minus').addEventListener('click', function() {
+      if (count > 1) {
+          count--;
+          countEl.value = count;
+      }
+  });
 
+  document.querySelector('.plus').addEventListener('click', function() {
+      count++;
+      countEl.value = count;
+  });
+</script>
+
+<script>
     
  var overlay = document.getElementById('overlay');
  var closeMenu = document.getElementById('close-menu');
@@ -290,6 +369,22 @@ function showDivs(n) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script>
+  jQuery(function ($) {
+    
+  var $active1 = $('#accordion .panel-collapse.in').prev().addClass('active');
+  
+  $active1.find('a').prepend('<i class="glyphicon glyphicon-minus"></i>');
+  $('#accordion .panel-heading').not($active1).find('a').prepend('<i class="glyphicon glyphicon-plus"></i>');
+  $('#accordion').on('show.bs.collapse', function (e) {
+      $('#accordion .panel-heading.active').removeClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+      $(e.target).prev().addClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+  });
+  
+  
+  
+  });
+    
+    </script>
 </body>
 </html>

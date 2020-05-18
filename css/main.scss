@@ -319,6 +319,7 @@ html {
                 .btn-black {
                     background-color: map-get($colors, dark-fontColor);
                     color: map-get($colors, whiteColor);
+                    a {color: map-get($colors , whiteColor );}
                 }
             }
             .cart-item {
@@ -651,7 +652,7 @@ html {
     #overlay {
         position: fixed;
         background: map-get($colors, bg-color);
-        padding: 2em;
+      
         width: 350px;
         height: 100vh;
         z-index: 999;
@@ -661,26 +662,50 @@ html {
         box-shadow: 0 5px 10px #000;
         animation: reverse-opacity 5s ase-in-out;
         .close-btn {
+            padding:5px;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            right: -20px;
+            top:0;
             float: right;
-            width: 22px;
+            width: 30px;
             opacity: 0;
             cursor: pointer;
         }
+        .user_login {
+            background: map-get($colors, bg-color);
+            font-style: italic;
+            padding: 15px 5px;
+        }
         .site-Menu {
-            list-style: none;
-            font-size: em(20);
-            margin: 10% auto 0 auto;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(1, 100%);
-            width: 80%;
-            li {
-                opacity: 0;
-                margin-top: 8px;
+
+         
+            width: 100%;
+            position: fixed;
+            overflow-y: auto;
+            height: calc(100vh - 70px);
+        
+            ul{
+                list-style: none;
+                font-size: em(14);
+                margin: 0 auto 0 auto;
+                padding: 0;
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+              
+                li {
+                    padding: 5px 10px;
+                    opacity: 0;
+                    margin-top: 8px;
+                    border-bottom: 1px solid rgba(204, 204, 204, .2);
+                    text-transform: capitalize;
+                }
+                a {
+                    color: map-get($colors, offWhite);
+                }
             }
-            a {
-                color: map-get($colors, whiteColor);
-            }
+            
+           
         }
     }
     .show-menu {
@@ -930,6 +955,103 @@ html {
         }
     }
 }
+
+// Product Detail
+.product_detail {
+    .product_image {
+       // position: relative;
+
+        .brandLogoBg {
+            background: url(../images/tpk_logo_transparent_04.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: -78px;
+            background-position-y: -50px;
+            width: 500px;
+            height: 500px;
+            img {
+            
+                width: 400px;
+                position: absolute;
+                margin-top: 120px;
+            }
+        }
+    }
+    .product_detail_price {
+        .p_green_text {
+            color: map-get($colors , primary );
+        }
+        .p_sku_block {
+            margin-top: em(20);
+            .skuName { 
+                font-family: 'rubikmedium';
+                font-size: em(30);
+            }
+            .title {
+                @extend .skuName;
+                font-family: 'rubikregular';
+            }
+            .price {
+                @extend .skuName;
+                margin-top: em(20);
+                margin-bottom: em(10);
+            }
+        }
+
+        .shortDescription {
+            font-size: em(14);
+        }
+        .more_items {
+            list-style: none;
+            margin: 0 auto;
+            padding:0;
+            img {
+                width: 50px;
+                margin-right:20px;
+            }
+        }
+
+        .product_qty {
+            margin-top: em(20);
+            margin-bottom: em(20);
+            overflow: hidden;
+            
+            .quantity.buttons_added .minus, 
+            .quantity.buttons_added .plus {
+                padding:10px 15px;
+                height: 45px;
+            }
+            .quantity .input-text.qty {
+                height: 45px;
+                width: 100px;
+                background: map-get($colors , light-gray )
+            }
+        }
+        .not_include {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .panel-default > .panel-heading {
+            background: none;
+           
+          
+        }
+        .panel-default {
+            border:none;
+        }
+        .panel-title {
+            font-size: em(24);
+            color: map-get($colors , primary );
+            .glyphicon {
+                font-size: 16px;
+            }
+        }
+    }
+    
+}
+
+// End Product detail
 
 .steps {
     margin-bottom: em(50);
@@ -1394,6 +1516,295 @@ html {
             top: 0;
             right: 5%;
         }
+    }
+}
+
+// Subscription
+
+.S_img_block {
+    width: 450px;
+    margin: 0 auto;
+    .img {
+        text-align: center;
+    }
+    .img_2 {
+        position: absolute;
+        width: 450px;
+        height: 300px;
+        left: 140px;
+        top: 200px;
+        z-index: 2;
+        img {
+            width: 100%;
+        }
+    }
+    .img_3 {
+        width: 350px;
+       @extend .img_2;
+       left: -90px;
+       top: 150px;
+       transform: rotate(45deg);
+    }
+}
+.simple_recurring_meal {
+    background: map-get($colors , primary );
+    color: map-get($colors , whiteColor );
+    padding: em(15);
+
+    h2{
+        @extend .sub-heading;
+        color: map-get($colors, whiteColor );
+    }
+
+
+    .simple_recurring_meal_steps {
+        list-style: none;
+        margin:0 auto;
+        padding:0;
+
+        li{
+            float: left;
+            width:150px;
+            margin-right: 8px;
+            span{ 
+                // height: 50px;
+                display: block;
+                font-size: em(55);
+                text-decoration: underline;
+            }
+            p{
+               font-size: em(14);
+            }
+        }
+
+    }
+}
+
+// Rewards
+.how_it_works {
+ list-style: none;
+ counter-reset: section;
+ margin-top: em(15);
+ overflow: hidden;
+
+ li {
+     width: 30%;
+     min-height: 100px;
+     position: relative;
+     padding-top: 70px;
+     float: left;
+   
+
+     &:before {
+        border:1px solid map-get($colors , primary);
+        padding: 10px 18px;
+        border-radius:50%;
+        counter-increment: section;
+        content: counter(section);
+        position: absolute;
+        left: 60px;
+        margin-top: -60px;
+     }
+
+     div {
+         font-weight: bold;
+         text-transform: uppercase;
+         color: map-get($colors, dark-fontColor );
+     }
+     p {
+         font-size: em(12);
+     }
+ }
+
+}
+
+.card_group {
+    list-style: none;
+    margin: 0 auto;
+    padding:0;
+    
+    .card {
+        float: left;
+        width: 25%;
+        padding: 15px 15px;
+        text-align: center;
+        border: 1px solid map-get($colors , light-gray );
+        @include transition;
+        img{
+            width: 40px;
+        }
+
+        &:hover {
+           box-shadow: 0 0px 5px map-get($colors , primary );
+        }
+
+        .card-body {
+            .card-title {
+                font-family: 'rubikmedium';
+                color: map-get($colors , dark-fontColor );
+                font-size: em(16);
+            }
+        }
+    }
+}
+
+.reward_image {
+    position: relative;
+    margin-bottom: 20px;
+    img {
+        width: 100%;
+    }
+    .reward_caption {
+        color: map-get($colors, whiteColor );
+        position: absolute;
+        max-width: 300px;
+        top:150px;
+        left: 5%;
+        font-size: em(16);
+        overflow: hidden;
+
+        h3{
+            font-size: em(25);
+        }
+       
+    }
+}
+.price_table {
+    thead{
+        th {
+            text-transform: uppercase;
+            text-align: center;
+            color: map-get($colors , dark-fontColor );
+            small {
+                display: block;
+                font-weight: normal;
+                text-transform: lowercase;
+            }
+
+            &:nth-of-type(1) {
+                text-align: left;
+            }
+        }
+    }
+    tbody {
+        td{
+            text-align: center;
+
+            &:nth-of-type(1) {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.reedam_for_product {
+    .slide{
+        transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
+    }
+    .slide_control {
+        position: relative;
+        .w3-display-left ,.w3-display-right   {
+            background: none; border: none;
+            color: map-get($colors , primary );
+            font-size: 24px;
+        }
+        .w3-display-left { position: absolute; top: 100px;  z-index: 2;}
+        .w3-display-right { position: absolute; right: 0; top: 100px; z-index: 2;}
+    }
+    .r_product_caption {
+        padding: 10px;
+        text-align: center;
+        .r_prodcut_title {
+            font-size: em(14);
+            font-weight: bold;
+        }
+        .r_points {
+            text-transform: uppercase;
+            color: map-get($colors , primary );
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+.total_points {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: em(25);
+    text-transform: uppercase;
+    font-family: 'rubikmedium';
+    color: map-get($colors, dark-fontColor );
+}
+.discount_number {
+    list-style: none;
+    margin:20px 0;
+    padding:0;
+    li{
+       display: inline-block;
+       padding: 0 21px;
+        position: relative;
+        color: map-get($colors , dark-fontColor );
+        &:after {
+            content: '';
+            border-right:1px solid #23D16A;
+            height: 80%;
+            position: absolute;
+            top: 5px;right: -5px;
+        }
+        &:last-child:after{
+            display: none
+        }
+        span{
+            display: block;
+            width:100%;
+            color: map-get($colors , primary );
+            font-size: em(30);
+            font-weight: bold;
+        }
+    } 
+}
+
+// slider
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+        .MultiCarousel .MultiCarousel-inner .item { float: left;}
+        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:0px; margin:10px; }
+    .MultiCarousel .leftLst, 
+    .MultiCarousel .rightLst { 
+        position:absolute; 
+        border-radius:50%;
+        top:calc(50% - 20px); 
+
+        background: none;
+        border: none;
+        color: map-get($colors , primary );
+        font-size: em(40);
+    }
+    .MultiCarousel .leftLst { 
+        left:0;  
+      
+    }
+    .MultiCarousel .rightLst { 
+        right:0; 
+      
+     }
+    
+        .MultiCarousel .leftLst.over, 
+        .MultiCarousel .rightLst.over { 
+            pointer-events: none; 
+            background:none; 
+            border:0;
+            
+        color: map-get($colors , dark-fontColor );
+             font-size: em(40);
+            }
+
+@include respond-below(xs) {
+    .page-header{
+        min-height: auto;
+    }
+    .page-header .page-title {
+        margin-top:10px;
     }
 }
 
