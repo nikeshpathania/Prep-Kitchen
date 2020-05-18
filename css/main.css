@@ -38,7 +38,7 @@ html {
     max-width: 500px;
     position: absolute;
     bottom: 10%;
-    left: 25%;
+    left: 20%;
     -webkit-transform: translateX(-20%);
             transform: translateX(-20%);
   }
