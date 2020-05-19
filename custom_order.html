@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div id="main">
     <div id="cartItem">
         <div class="container form-inline">
             <div class="col-sm-8 col-sm-offset-2">
@@ -38,16 +39,18 @@
 
     </div>
     <header>
-        <div id="overlay">
-          <img class="close-btn" id="close-menu" src="images/close-menu.svg" alt="">
-          <div class="user_login">Hello, thomas</div>
+        <div id="overlay" class="sidenav">
+    
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
           <div class="site-Menu">
-          
-            <ul class="M_site-Menu">
-              <li><a href="myaccount.html">My Account</a></li>
-              <li><a href="myaccount.html">Re-Order Previous</a></li>
-            </ul>
+    
           <ul class="D_site-Menu">
+            <li><a href="myaccount.html">My Account</a>
+            <ul>
+              <li><a href="">Sub Menu</a></li>
+            </ul></li>
+            <li><a href="myaccount.html">Re-Order Previous</a></li>
             <li><a href="/">Home</a></li>
             <li><a href="how_it_works.html">How It Works Page</a></li>
             <li><a href="product_page.html">Product</a></li>
@@ -92,7 +95,9 @@
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="float-left">
-              <img class="menu-btn" id="open-menu" src="images/menu.svg" alt=""> 
+              <span class="menu-btn" onclick="openNav()">
+               <img id="open-menu" src="images/menu.svg" alt=""> 
+            </span>
             </div>
     
             <div class="nav-container">
@@ -522,7 +527,10 @@
       <div class="copyright">
         <div class="container">Copyright 2019 Dallas Prep Kitchen - All Rights Reserved</div></div>
       </footer>
-
+      <div class="chat_widget">
+        <img src="images/chat.svg" alt="">
+      </div>
+    </div>
       <script src="js/menu.js"></script>
 
     <script>

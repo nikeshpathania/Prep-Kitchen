@@ -13,98 +13,126 @@
 
 </head>
 <body>
-  <header>
-    <div id="overlay">
-      <img class="close-btn" id="close-menu" src="images/close-menu.svg" alt="">
-      <div class="user_login">Hello, thomas</div>
-      <div class="site-Menu">
-      
-        <ul class="M_site-Menu">
-          <li><a href="myaccount.html">My Account</a></li>
-          <li><a href="myaccount.html">Re-Order Previous</a></li>
-        </ul>
-      <ul class="D_site-Menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="how_it_works.html">How It Works Page</a></li>
-        <li><a href="product_page.html">Product</a></li>
-        <li><a href="location_finder.html">Location Finder</a></li>
-        <li><a href="nutrition_coaching.html">Nutrition Coaching</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="protein_carbs_vegetable.html">Protein, Carbs, Vegetables</a></li>
-        <li><a href="quick_order.html">Quick Order</a></li>
-        <li><a href="rewards.html">Rewards</a></li>
-        <li><a href="subscription.html">Subscription</a></li>
-        <li><a href="join.html">Join</a></li>
-       
-        <li><a href="plan.html">Plan</a></li>
-      
-        <li><a href="custom_order.html">Custom Order</a></li>
-        <li><a href="custom_order1.html">Custom Order1</a></li>
-    </ul> 
-  </div>
-  </div>
-    
-    <nav class="navbar navbar-default" id="myHeader">
-      <div class="search-wrapper" id="searchBar">
-        <!-- /snippets/search-bar.liquid -->
-  
-  
-  <form class="input-group search-bar" >
-    <div class="icon-wrapper">
-      <span class="icon-fallback-text">
-        <span class="icon icon-search" aria-hidden="true"><img src="images/search_icon.svg" alt=""></span>
-        
-      </span>
-    </div>
-    <div class="form-group">
-      <input type="search" name="q" value="" placeholder="Search our store" class="search_input" aria-label="Search our store">
-    </div>
-    <div class="button-wrapper">
-      <span class="icon icon-close" aria-hidden="true"><img src="images/cross.svg" alt=""></span>
-    </div>
-  </form>
-      </div>
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="float-left">
-          <img class="menu-btn" id="open-menu" src="images/menu.svg" alt=""> 
-        </div>
-
-        <div class="nav-container">
-          <div id="logo">
-            <a href="index.html">
-              <img src="images/logo.svg" alt="">
-                    </a>
-
-                </div>
-                <div id="top-right">
-                  <div class="search-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.182 33.959">
-                      <g transform="translate(451.417 -12.383)"><path class="a" d="M-306.463,68.278a1.142,1.142,0,0,0-1.287,1.131h0a9.152,9.152,0,0,1,9.149,9.155h0a1.142,1.142,0,0,0,1.13-1.288A10.384,10.384,0,0,0-306.463,68.278Z" transform="translate(-126.668 -49.273)"/><path class="a" d="M-409.889,36.192l-7.571-2.968a2.631,2.631,0,0,0-.414-.124,17.006,17.006,0,0,0-10.366-19.545,17,17,0,0,0-22.005,9.61,17,17,0,0,0,9.61,22.006,17.006,17.006,0,0,0,20.888-7.291,2.609,2.609,0,0,0,.388.191l7.57,2.968a2.6,2.6,0,0,0,3.374-1.473h0A2.6,2.6,0,0,0-409.889,36.192Zm-13.147-2.359a12.26,12.26,0,0,1-15.872,6.931,12.26,12.26,0,0,1-6.931-15.872,12.26,12.26,0,0,1,15.872-6.931A12.26,12.26,0,0,1-423.036,33.833Z" transform="translate(0)"/></g></svg>
+  <div id="main">
+    <div id="cartItem">
+      <div class="container form-inline">
+          <div class="col-sm-8 col-sm-offset-2">
+              <div class="col-sm-4">
+                  <div class="form-group">
+                      <label for="exampleInputName2">Meals = </label>
+                      <input type="text" class="form-control" id="exampleInputName2" value="0"> week
                   </div>
-                  <div class="btn_group">
-                  <button class="btn btn-green">
-                    Re-order Previous
-                  </button>
-                  <button class="btn btn-black">
-                    My Account
-                  </button>
-                </div>
-                  <div class="cart-item"><span class="badge">0</span>
-                    <svg viewBox="0 0 32.57 32.57">
-                      <g transform="translate(0 0)">
-                      <path class="a" d="M-1031.616-131.5a3.267,3.267,0,0,0-3.257,3.257,3.267,3.267,0,0,0,3.257,3.257,3.266,3.266,0,0,0,3.257-3.257A3.266,3.266,0,0,0-1031.616-131.5Zm-9.771-26.056v3.257h3.257l5.862,12.377-2.28,3.908a5.8,5.8,0,0,0-.326,1.629,3.267,3.267,0,0,0,3.257,3.257h19.543v-3.257h-18.891a.35.35,0,0,1-.326-.326v-.163l1.466-2.768h12.051a2.97,2.97,0,0,0,2.768-1.628l5.862-10.586a.9.9,0,0,0,.326-.814,1.539,1.539,0,0,0-1.628-1.628h-24.1l-1.466-3.257Zm26.056,26.056a3.267,3.267,0,0,0-3.257,3.257,3.267,3.267,0,0,0,3.257,3.257,3.267,3.267,0,0,0,3.257-3.257A3.267,3.267,0,0,0-1015.331-131.5Z" transform="translate(1041.387 157.552)"/></g>
-                      </svg>
-                </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="form-group">
+                      <label for="exampleInputName3">Totals = </label>
+                      <input type="text" class="form-control" id="exampleInputName3" value="$100.00"> week
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="form-group"><button class="btn btn-white" id="checkout">Checkout</button></div>
+              </div>
+          </div>
+      </div>
 
-                </div>
-        </div>
+  </div>
+    <header>
+      <div id="overlay" class="sidenav">
   
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <div class="site-Menu">
+  
+        <ul class="D_site-Menu">
+          <li><a href="myaccount.html">My Account</a>
+          <ul>
+            <li><a href="">Sub Menu</a></li>
+          </ul></li>
+          <li><a href="myaccount.html">Re-Order Previous</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="how_it_works.html">How It Works Page</a></li>
+          <li><a href="product_page.html">Product</a></li>
+          <li><a href="location_finder.html">Location Finder</a></li>
+          <li><a href="nutrition_coaching.html">Nutrition Coaching</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="protein_carbs_vegetable.html">Protein, Carbs, Vegetables</a></li>
+          <li><a href="quick_order.html">Quick Order</a></li>
+          <li><a href="rewards.html">Rewards</a></li>
+          <li><a href="subscription.html">Subscription</a></li>
+          <li><a href="join.html">Join</a></li>
+         
+          <li><a href="plan.html">Plan</a></li>
+        
+          <li><a href="custom_order.html">Custom Order</a></li>
+          <li><a href="custom_order1.html">Custom Order1</a></li>
+      </ul> 
+    </div>
+    </div>
+     
+      
+      <nav class="navbar navbar-default" id="myHeader">
+        <div class="search-wrapper" id="searchBar">
+          <!-- /snippets/search-bar.liquid -->
     
-       
-      </div><!-- /.container-fluid -->
-    </nav>
-  </header>
+    
+    <form class="input-group search-bar" >
+      <div class="icon-wrapper">
+        <span class="icon-fallback-text">
+          <span class="icon icon-search" aria-hidden="true"><img src="images/search_icon.svg" alt=""></span>
+          
+        </span>
+      </div>
+      <div class="form-group">
+        <input type="search" name="q" value="" placeholder="Search our store" class="search_input" aria-label="Search our store">
+      </div>
+      <div class="button-wrapper">
+        <span class="icon icon-close" aria-hidden="true"><img src="images/cross.svg" alt=""></span>
+      </div>
+    </form>
+        </div>
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="float-left">
+            <span class="menu-btn" onclick="openNav()">
+             <img id="open-menu" src="images/menu.svg" alt=""> 
+          </span>
+          </div>
+  
+          <div class="nav-container">
+            <div id="logo">
+              <a href="index.html">
+                <img src="images/logo.svg" alt="">
+                      </a>
+  
+                  </div>
+                  <div id="top-right">
+                    <div class="search-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.182 33.959">
+                        <g transform="translate(451.417 -12.383)"><path class="a" d="M-306.463,68.278a1.142,1.142,0,0,0-1.287,1.131h0a9.152,9.152,0,0,1,9.149,9.155h0a1.142,1.142,0,0,0,1.13-1.288A10.384,10.384,0,0,0-306.463,68.278Z" transform="translate(-126.668 -49.273)"/><path class="a" d="M-409.889,36.192l-7.571-2.968a2.631,2.631,0,0,0-.414-.124,17.006,17.006,0,0,0-10.366-19.545,17,17,0,0,0-22.005,9.61,17,17,0,0,0,9.61,22.006,17.006,17.006,0,0,0,20.888-7.291,2.609,2.609,0,0,0,.388.191l7.57,2.968a2.6,2.6,0,0,0,3.374-1.473h0A2.6,2.6,0,0,0-409.889,36.192Zm-13.147-2.359a12.26,12.26,0,0,1-15.872,6.931,12.26,12.26,0,0,1-6.931-15.872,12.26,12.26,0,0,1,15.872-6.931A12.26,12.26,0,0,1-423.036,33.833Z" transform="translate(0)"/></g></svg>
+                    </div>
+                    <div class="btn_group">
+                    <button class="btn btn-green">
+                      Re-order Previous
+                    </button>
+                    <button class="btn btn-black">
+                      My Account
+                    </button>
+                  </div>
+                    <div class="cart-item"><span class="badge">0</span>
+                      <svg viewBox="0 0 32.57 32.57">
+                        <g transform="translate(0 0)">
+                        <path class="a" d="M-1031.616-131.5a3.267,3.267,0,0,0-3.257,3.257,3.267,3.267,0,0,0,3.257,3.257,3.266,3.266,0,0,0,3.257-3.257A3.266,3.266,0,0,0-1031.616-131.5Zm-9.771-26.056v3.257h3.257l5.862,12.377-2.28,3.908a5.8,5.8,0,0,0-.326,1.629,3.267,3.267,0,0,0,3.257,3.257h19.543v-3.257h-18.891a.35.35,0,0,1-.326-.326v-.163l1.466-2.768h12.051a2.97,2.97,0,0,0,2.768-1.628l5.862-10.586a.9.9,0,0,0,.326-.814,1.539,1.539,0,0,0-1.628-1.628h-24.1l-1.466-3.257Zm26.056,26.056a3.267,3.267,0,0,0-3.257,3.257,3.267,3.267,0,0,0,3.257,3.257,3.267,3.267,0,0,0,3.257-3.257A3.267,3.267,0,0,0-1015.331-131.5Z" transform="translate(1041.387 157.552)"/></g>
+                        </svg>
+                  </div>
+  
+                  </div>
+          </div>
+    
+      
+         
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
 <section class="page-header" >
   <div class="container">
     
@@ -127,14 +155,14 @@
 <section data-aos="slide-up clearfix">
   <div class="container">
   <div class="row">
-    <div class="text-center">
-      <button class="btn btn-grey">Bulk</button>
-      <button class="btn btn-grey btn-green">Breakfast</button>
+    <div class="text-center" id="myBtnContainer">
+      <button class="btn btn-grey active">Bulk</button>
+      <button class="btn btn-grey">Breakfast</button>
       <button class="btn btn-grey">Chef Inspired</button>
       <button class="btn btn-grey">Classic Prep</button>
     </div>  
     <div class="col-sm-10 col-sm-offset-1">
-      <div id="buldProtein">
+      <div id="buldProtein" class="column bulk">
       <div class="col-sm-12">
         <h3 class="heading_3">Bulk Proteins</h3>
       </div>
@@ -148,6 +176,14 @@
             </div>
             <spna class="p_plus">+</spna>
           </div>
+          <div class="p_qty">
+            <div class="quantity buttons_added">
+                <input type="button" value="-" onclick="minus()" class="minus">
+                <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" onclick="plus()" class="plus">
+            </div>
+            <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+        </div>
         </div>
         <div class="product_desc">All natural item</div>
       </div>
@@ -162,6 +198,14 @@
             </div>
             <spna class="p_plus">+</spna>
           </div>
+          <div class="p_qty">
+            <div class="quantity buttons_added">
+                <input type="button" value="-" onclick="minus()" class="minus">
+                <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" onclick="plus()" class="plus">
+            </div>
+            <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+        </div>
         </div>
         <div class="product_desc">All natural item</div>
       </div>
@@ -176,15 +220,27 @@
             </div>
             <spna class="p_plus">+</spna>
           </div>
+          <div class="p_qty">
+            <div class="quantity buttons_added">
+                <input type="button" value="-" onclick="minus()" class="minus">
+                <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" onclick="plus()" class="plus">
+            </div>
+            <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+        </div>
         </div>
         <div class="product_desc">All natural item</div>
       </div>
     </div>
+    
+    
   </div>
-  <div id="breakfast">    
+  <div id="breakfast" class="column breakfast">    
     <div class="col-sm-12">
       <h3 class="heading_3">Breakfast</h3>
     </div>
+    
+    
     <div class="col-sm-4">
       <div class="prduct_container">
         <div class="product_image">
@@ -195,9 +251,16 @@
             </div>
             <spna class="p_plus">+</spna>
           </div>
+          <div class="p_qty">
+            <div class="quantity buttons_added">
+                <input type="button" value="-" onclick="minus()" class="minus">
+                <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" onclick="plus()" class="plus">
+            </div>
+            <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+        </div>
         </div>
         <div class="product_desc">All natural item</div>
-        <div class="price">$8.99</div>
       </div>
     </div>
     <div class="col-sm-4">
@@ -210,9 +273,16 @@
             </div>
             <spna class="p_plus">+</spna>
           </div>
+          <div class="p_qty">
+            <div class="quantity buttons_added">
+                <input type="button" value="-" onclick="minus()" class="minus">
+                <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" onclick="plus()" class="plus">
+            </div>
+            <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+        </div>
         </div>
         <div class="product_desc">All natural item</div>
-        <div class="price">$8.99</div>
       </div>
     </div>
     <div class="col-sm-4">
@@ -225,13 +295,22 @@
             </div>
             <spna class="p_plus">+</spna>
           </div>
+          <div class="p_qty">
+            <div class="quantity buttons_added">
+                <input type="button" value="-" onclick="minus()" class="minus">
+                <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" onclick="plus()" class="plus">
+            </div>
+            <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+        </div>
         </div>
         <div class="product_desc">All natural item</div>
-        <div class="price">$8.99</div>
       </div>
     </div>
+    
+
     </div>
-    <div id="chefInspired">    
+    <div id="chefInspired" class="column chef_Inspired">    
       <div class="col-sm-12">
         <h2 class="heading_3">Chef Inspired</h2>
       </div>
@@ -245,6 +324,14 @@
               </div>
               <spna class="p_plus">+</spna>
             </div>
+            <div class="p_qty">
+              <div class="quantity buttons_added">
+                  <input type="button" value="-" onclick="minus()" class="minus">
+                  <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                  <input type="button" value="+" onclick="plus()" class="plus">
+              </div>
+              <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+          </div>
           </div>
           <div class="product_desc">All natural item</div>
           <div class="price">$8.99</div>
@@ -260,6 +347,14 @@
               </div>
               <spna class="p_plus">+</spna>
             </div>
+            <div class="p_qty">
+              <div class="quantity buttons_added">
+                  <input type="button" value="-" onclick="minus()" class="minus">
+                  <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                  <input type="button" value="+" onclick="plus()" class="plus">
+              </div>
+              <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+          </div>
           </div>
           <div class="product_desc">All natural item</div>
           <div class="price">$8.99</div>
@@ -275,13 +370,21 @@
               </div>
               <spna class="p_plus">+</spna>
             </div>
+            <div class="p_qty">
+              <div class="quantity buttons_added">
+                  <input type="button" value="-" onclick="minus()" class="minus">
+                  <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                  <input type="button" value="+" onclick="plus()" class="plus">
+              </div>
+              <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+          </div>
           </div>
           <div class="product_desc">All natural item</div>
           <div class="price">$8.99</div>
         </div>
       </div>
       </div>
-      <div id="classicPrep">    
+      <div id="classicPrep" class="column classic_Prep">     
         <div class="col-sm-12">
           <h2 class="heading_3">Classic Prep</h2>
         </div>
@@ -295,6 +398,14 @@
                 </div>
                 <spna class="p_plus">+</spna>
               </div>
+              <div class="p_qty">
+                <div class="quantity buttons_added">
+                    <input type="button" value="-" onclick="minus()" class="minus">
+                    <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                    <input type="button" value="+" onclick="plus()" class="plus">
+                </div>
+                <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+            </div>
             </div>
             <div class="product_desc">All natural item</div>
             <div class="price">$8.99</div>
@@ -310,6 +421,14 @@
                 </div>
                 <spna class="p_plus">+</spna>
               </div>
+              <div class="p_qty">
+                <div class="quantity buttons_added">
+                    <input type="button" value="-" onclick="minus()" class="minus">
+                    <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                    <input type="button" value="+" onclick="plus()" class="plus">
+                </div>
+                <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+            </div>
             </div>
             <div class="product_desc">All natural item</div>
             <div class="price">$8.99</div>
@@ -325,6 +444,14 @@
                 </div>
                 <spna class="p_plus">+</spna>
               </div>
+              <div class="p_qty">
+                <div class="quantity buttons_added">
+                    <input type="button" value="-" onclick="minus()" class="minus">
+                    <input type="number" id="count" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                    <input type="button" value="+" onclick="plus()" class="plus">
+                </div>
+                <div class="cart_icon"><img src="images/shopping-cart.svg" onclick="showCart()" alt=""></div>
+            </div>
             </div>
             <div class="product_desc">All natural item</div>
             <div class="price">$8.99</div>
@@ -401,27 +528,96 @@ document.querySelector('.new').addEventListener('click', function() {
 <div class="copyright">
   <div class="container">Copyright 2019 Dallas Prep Kitchen - All Rights Reserved</div></div>
 </footer>
+<div class="chat_widget">
+  <img src="images/chat.svg" alt="">
+</div>
+</div>
 <script src="js/menu.js"></script>
+
+<script>
+  var count = 1;
+  var countEl = document.getElementById("count");
+
+  function plus() {
+    count++;
+      countEl.value = count;  
+  }
+  function minus() {
+    if (count > 1) {
+          count--;
+          countEl.value = count;
+       
+      }
+  }
+
+</script>
+
+<script>
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  
+var x, i;
+x = document.getElementsByClassName("column");
+if (c == "all") c = "";
+// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+for (i = 0; i < x.length; i++) {
+  w3RemoveClass(x[i], "show");
+  if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+}
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+var i, arr1, arr2;
+arr1 = element.className.split(" ");
+arr2 = name.split(" ");
+for (i = 0; i < arr2.length; i++) {
+  if (arr1.indexOf(arr2[i]) == -1) {
+    element.className += " " + arr2[i];
+  }
+}
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+var i, arr1, arr2;
+arr1 = element.className.split(" ");
+arr2 = name.split(" ");
+for (i = 0; i < arr2.length; i++) {
+  while (arr1.indexOf(arr2[i]) > -1) {
+    arr1.splice(arr1.indexOf(arr2[i]), 1);
+  }
+}
+element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+btns[i].addEventListener("click", function(index){
+  var current = document.getElementsByClassName("active");
+  current[i].className = current[i].className.replace(" active", "");
+  this.className += " active";
+
+});
+}
+
+</script>
+
 <script>
 
-  var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("slide_reviews");
-  if (n > x.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
-  }
-  x[slideIndex-1].style.display = "block"; 
+function showCart(params) {
+    document.getElementById('cartItem').style.display = 'block';
+
 }
+document.getElementById('checkout').addEventListener('click', function() {
+    document.getElementById('cartItem').style.display = 'none';
+});
 </script>
+
 <script src="js/aos.js"></script>
 <script>
     AOS.init({

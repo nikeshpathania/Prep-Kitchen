@@ -10,20 +10,43 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/main.css">
 
-
 </head>
 <body>
+  <div class="header-hero" >
+    <div class="header-hero-contentBlock item" data-aos="fade-down">
+      <div data-type="Text" data-name="Prepared gourmet meals.">
+        <small class="subheading">Prepared gourmet meals.</small>
+        <h1>We do all the cooking,
+          you do all that you love.</h1>
+      </div>
+      <div class="action-block">
+        <button class="btn btn-white">Bulk Basic</button>
+        <button class="btn btn-white">Prepped Meals</button>
+        <button class="btn btn-white">Build Your Meals</button>
+      </div>
+      <div class="reviews">
+        With over 4,000 <span class="stars"><img src="images/5-stars.svg" alt=""></span> reviews!
+      </div>
+  </div>
+  <div class="new-Alert" data-aos="fade-left">
+    <div class="title">New</div>
+    <p>You ask, we provided! Order recurring meals by
+      visiting “Start a Subscription”! </p>
+  </div>
+  </div>
   <header>
-    <div id="overlay">
-      <img class="close-btn" id="close-menu" src="images/close-menu.svg" alt="">
-      <div class="user_login">Hello, thomas</div>
+    <div id="overlay" class="sidenav">
+
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
       <div class="site-Menu">
-      
-        <ul class="M_site-Menu">
-          <li><a href="myaccount.html">My Account</a></li>
-          <li><a href="myaccount.html">Re-Order Previous</a></li>
-        </ul>
+
       <ul class="D_site-Menu">
+        <li><a href="myaccount.html">My Account</a>
+        <ul>
+          <li><a href="">Sub Menu</a></li>
+        </ul></li>
+        <li><a href="myaccount.html">Re-Order Previous</a></li>
         <li><a href="/">Home</a></li>
         <li><a href="how_it_works.html">How It Works Page</a></li>
         <li><a href="product_page.html">Product</a></li>
@@ -43,28 +66,7 @@
     </ul> 
   </div>
   </div>
-    <div class="header-hero" >
-      <div class="header-hero-contentBlock item" data-aos="fade-down">
-        <div data-type="Text" data-name="Prepared gourmet meals.">
-          <small class="subheading">Prepared gourmet meals.</small>
-          <h1>We do all the cooking,
-            you do all that you love.</h1>
-        </div>
-        <div class="action-block">
-          <button class="btn btn-white">Bulk Basic</button>
-          <button class="btn btn-white">Prepped Meals</button>
-          <button class="btn btn-white">Build Your Meals</button>
-        </div>
-        <div class="reviews">
-          With over 4,000 <span class="stars"><img src="images/5-stars.svg" alt=""></span> reviews!
-        </div>
-    </div>
-    <div class="new-Alert" data-aos="fade-left">
-      <div class="title">New</div>
-      <p>You ask, we provided! Order recurring meals by
-        visiting “Start a Subscription”! </p>
-    </div>
-    </div>
+   
     
     <nav class="navbar navbar-default" id="myHeader">
       <div class="search-wrapper" id="searchBar">
@@ -89,7 +91,9 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="float-left">
-          <img class="menu-btn" id="open-menu" src="images/menu.svg" alt=""> 
+          <span class="menu-btn" onclick="openNav()">
+           <img id="open-menu" src="images/menu.svg" alt=""> 
+        </span>
         </div>
 
         <div class="nav-container">
@@ -127,6 +131,7 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
+  <div id="main">
   <section class="page-header" >
     <div class="container">
       
@@ -136,24 +141,13 @@
     
   </section>
 
+</div>
 
 
 
   <script src="js/menu.js"></script>
-<script>
+<!-- <script>
 
-
-    
-var overlay = document.getElementById('overlay');
- var closeMenu = document.getElementById('close-menu');
-
-document.getElementById('open-menu').addEventListener('click', function(){
-    overlay.classList.add('show-menu');
-    console.log('clicked');
-});
-document.getElementById('close-menu').addEventListener('click', function(){
-    overlay.classList.remove('show-menu');
-});
 
 
   var slideIndex = 1;
@@ -173,7 +167,7 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block"; 
 }
-</script>
+</script> -->
 <script src="js/aos.js"></script>
 <script>
     AOS.init({
