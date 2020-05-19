@@ -292,6 +292,7 @@ html {
             width: calc(100% - 50px);
             float: left;
             text-align: center;
+            padding:7px;
             img {
                 width: 100px;
                 transform: translateX(-50px);
@@ -302,6 +303,7 @@ html {
             float: right;
             position: absolute;
             right: 0;
+            margin-top:3px;
             .search-icon {
                 float: left;
                 cursor: pointer;
@@ -350,9 +352,9 @@ html {
     }
     .section_content {
         width: 60%;
-        margin: em(30) auto;
+        margin: em(30) auto em(60);
         line-height: em(22);
-        margin-top: -12.5px;
+
         text-align: center;
         font-family: 'rubiklight';
         font-style: normal;
@@ -588,9 +590,70 @@ html {
         margin: 0;
     }
     .navbar-default {
-        background: transparent;
+        background: map-get($colors , whiteColor);
         border: transparent;
+        
     }
+
+    .sticky {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+      }
+      .search-wrapper{
+        //   position: absolute;
+          top: 0;
+          width: 100%;
+          background: map-get($colors , dark-Primary);
+          padding:5px;
+          display: none;
+          color: map-get($colors , whiteColor );
+          @include transition;
+
+          .search-bar {
+              width: 80%;
+              margin: 0 auto;
+            .icon-wrapper, 
+            .form-group, 
+            .button-wrapper {
+                float: left;
+                margin: 5px;
+            }
+            
+            .icon-close img {
+                width: 20px;
+            }
+            .icon-search img{
+                width: 25px;
+            }
+            .form-group {
+                width: 80%;
+                ::placeholder{
+                    color: map-get($colors , whiteColor );
+                  }
+    
+                  .search_input {
+                      width: 100%;
+                      border:none;
+                      background: none;
+                      color: map-get($colors , whiteColor );
+                      border-bottom:2px solid map-get($colors , primary );
+                      font-size: em(20);
+    
+                      
+                      &:focus {
+                          outline: none;
+                         
+                      }
+    
+                 
+                  }
+            }
+           
+          }
+      }
     .media-body,
     .media-left,
     .media-right {
@@ -655,7 +718,7 @@ html {
       
         width: 350px;
         height: 100vh;
-        z-index: 999;
+        z-index: 9999999;
         display: none;
         transform: scaleX(0);
         transform-origin: left;
@@ -1061,7 +1124,7 @@ html {
 }
 
 .Join_from {
-    max-width: 300px;
+    max-width: 340px;
     margin: em(20) auto;
     text-align: center;
     .form-control {
@@ -1130,8 +1193,7 @@ html {
     position: fixed;
     z-index: 1;
     width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 0;
     color: map-get($colors, whiteColor);
     @include transition;
     display: none;
@@ -1169,6 +1231,7 @@ html {
     }
     .product_option {
         display: inline-block;
+        width: 100%;
     }
     .product_amount,
     .product_qty,
@@ -1413,6 +1476,9 @@ html {
 .shipments_plan {
     h3 {
         margin-top: 0;
+    }
+    li{
+        text-transform: capitalize;
     }
 }
 

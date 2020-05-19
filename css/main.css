@@ -137,6 +137,7 @@ html {
     width: calc(100% - 50px);
     float: left;
     text-align: center;
+    padding: 7px;
   }
   .nav-container #logo img {
     width: 100px;
@@ -148,6 +149,7 @@ html {
     float: right;
     position: absolute;
     right: 0;
+    margin-top: 3px;
   }
   .nav-container #top-right .search-icon {
     float: left;
@@ -197,9 +199,8 @@ html {
   }
   .section_content {
     width: 60%;
-    margin: 1.875em auto;
+    margin: 1.875em auto 3.75em;
     line-height: 1.375em;
-    margin-top: -12.5px;
     text-align: center;
     font-family: 'rubiklight';
     font-style: normal;
@@ -426,8 +427,68 @@ html {
     margin: 0;
   }
   .navbar-default {
-    background: transparent;
+    background: #FFFFFF;
     border: transparent;
+  }
+  .sticky {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  .search-wrapper {
+    top: 0;
+    width: 100%;
+    background: #42B564;
+    padding: 5px;
+    display: none;
+    color: #FFFFFF;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+  }
+  .search-wrapper .search-bar {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .search-wrapper .search-bar .icon-wrapper,
+  .search-wrapper .search-bar .form-group,
+  .search-wrapper .search-bar .button-wrapper {
+    float: left;
+    margin: 5px;
+  }
+  .search-wrapper .search-bar .icon-close img {
+    width: 20px;
+  }
+  .search-wrapper .search-bar .icon-search img {
+    width: 25px;
+  }
+  .search-wrapper .search-bar .form-group {
+    width: 80%;
+  }
+  .search-wrapper .search-bar .form-group ::-webkit-input-placeholder {
+    color: #FFFFFF;
+  }
+  .search-wrapper .search-bar .form-group :-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+  .search-wrapper .search-bar .form-group ::-ms-input-placeholder {
+    color: #FFFFFF;
+  }
+  .search-wrapper .search-bar .form-group ::placeholder {
+    color: #FFFFFF;
+  }
+  .search-wrapper .search-bar .form-group .search_input {
+    width: 100%;
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    border-bottom: 2px solid #23D16A;
+    font-size: 1.25em;
+  }
+  .search-wrapper .search-bar .form-group .search_input:focus {
+    outline: none;
   }
   .media-body,
   .media-left,
@@ -495,7 +556,7 @@ html {
     background: #131313;
     width: 350px;
     height: 100vh;
-    z-index: 999;
+    z-index: 9999999;
     display: none;
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
@@ -942,7 +1003,7 @@ html {
 }
 
 .Join_from {
-  max-width: 300px;
+  max-width: 340px;
   margin: 1.25em auto;
   text-align: center;
 }
@@ -1017,9 +1078,7 @@ html {
   position: fixed;
   z-index: 1;
   width: 100%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  bottom: 0;
   color: #FFFFFF;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
@@ -1065,6 +1124,7 @@ html {
 
 .product_card .product_option {
   display: inline-block;
+  width: 100%;
 }
 
 .product_card .product_amount,
@@ -1312,6 +1372,10 @@ html {
 
 .shipments_plan h3 {
   margin-top: 0;
+}
+
+.shipments_plan li {
+  text-transform: capitalize;
 }
 
 .processed .day_tab, .skipOrder .day_tab, .unSkipOrder .day_tab {

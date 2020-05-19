@@ -17,36 +17,55 @@
 <body>
   <header>
     <div id="overlay">
-        <img class="close-btn" id="close-menu" src="images/close-menu.svg" alt="">
-        <div class="user_login">Hello, thomas</div>
-        <div class="site-Menu">
-        
-          <ul class="M_site-Menu">
-            <li><a href="myaccount.html">My Account</a></li>
-            <li><a href="myaccount.html">Re-Order Previous</a></li>
-          </ul>
-        <ul class="D_site-Menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="how_it_works.html">How It Works Page</a></li>
-          <li><a href="product_page.html">Product</a></li>
-          <li><a href="location_finder.html">Location Finder</a></li>
-          <li><a href="nutrition_coaching.html">Nutrition Coaching</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="protein_carbs_vegetable.html">Protein, Carbs, Vegetables</a></li>
-          <li><a href="quick_order.html">Quick Order</a></li>
-          <li><a href="rewards.html">Rewards</a></li>
-          <li><a href="subscription.html">Subscription</a></li>
-          <li><a href="join.html">Join</a></li>
-          <li><a href="start_subscription.html">Start a Subscription</a></li>
-          <li><a href="plan.html">Plan</a></li>
-        
-          <li><a href="custom_order.html">Custom Order</a></li>
-          <li><a href="custom_order1.html">Custom Order1</a></li>
-      </ul> 
-    </div>
-    </div>
+      <img class="close-btn" id="close-menu" src="images/close-menu.svg" alt="">
+      <div class="user_login">Hello, thomas</div>
+      <div class="site-Menu">
+      
+        <ul class="M_site-Menu">
+          <li><a href="myaccount.html">My Account</a></li>
+          <li><a href="myaccount.html">Re-Order Previous</a></li>
+        </ul>
+      <ul class="D_site-Menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="how_it_works.html">How It Works Page</a></li>
+        <li><a href="product_page.html">Product</a></li>
+        <li><a href="location_finder.html">Location Finder</a></li>
+        <li><a href="nutrition_coaching.html">Nutrition Coaching</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="protein_carbs_vegetable.html">Protein, Carbs, Vegetables</a></li>
+        <li><a href="quick_order.html">Quick Order</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+        <li><a href="subscription.html">Subscription</a></li>
+        <li><a href="join.html">Join</a></li>
+       
+        <li><a href="plan.html">Plan</a></li>
+      
+        <li><a href="custom_order.html">Custom Order</a></li>
+        <li><a href="custom_order1.html">Custom Order1</a></li>
+    </ul> 
+  </div>
+  </div>
+    
+    <nav class="navbar navbar-default" id="myHeader">
+      <div class="search-wrapper" id="searchBar">
+        <!-- /snippets/search-bar.liquid -->
   
-    <nav class="navbar navbar-default" data-aos="slide-up">
+  
+  <form class="input-group search-bar" >
+    <div class="icon-wrapper">
+      <span class="icon-fallback-text">
+        <span class="icon icon-search" aria-hidden="true"><img src="images/search_icon.svg" alt=""></span>
+        
+      </span>
+    </div>
+    <div class="form-group">
+      <input type="search" name="q" value="" placeholder="Search our store" class="search_input" aria-label="Search our store">
+    </div>
+    <div class="button-wrapper">
+      <span class="icon icon-close" aria-hidden="true"><img src="images/cross.svg" alt=""></span>
+    </div>
+  </form>
+      </div>
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="float-left">
@@ -70,7 +89,7 @@
                     Re-order Previous
                   </button>
                   <button class="btn btn-black">
-                    <a href="myaccount.html"> My Account</a>
+                    My Account
                   </button>
                 </div>
                   <div class="cart-item"><span class="badge">0</span>
@@ -157,18 +176,9 @@
       <div class="copyright">
         <div class="container">Copyright 2019 Dallas Prep Kitchen - All Rights Reserved</div></div>
       </footer>
+
+      <script src="js/menu.js"></script>   
     <script>
-        var overlay = document.getElementById('overlay');
-        var closeMenu = document.getElementById('close-menu');
-
-        document.getElementById('open-menu').addEventListener('click', function() {
-            overlay.classList.add('show-menu');
-            console.log('clicked');
-        });
-        document.getElementById('close-menu').addEventListener('click', function() {
-            overlay.classList.remove('show-menu');
-        });
-
 
         var slideIndex = 1;
         showDivs(slideIndex);
