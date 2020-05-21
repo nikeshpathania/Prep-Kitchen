@@ -1989,6 +1989,9 @@ footer .copyright {
 }
 
 @media (max-width: 767px) {
+  .nav-container {
+    overflow: inherit;
+  }
   #top-right .btn_group {
     display: none;
   }
