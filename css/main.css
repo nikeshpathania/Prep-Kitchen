@@ -575,12 +575,12 @@ footer .copyright {
 }
 
 .navbar-brand {
-  padding: 5px;
+  padding: 8px;
   height: auto;
 }
 
 .navbar-brand img {
-  width: 150px;
+  width: 100px;
 }
 
 .navbar {
