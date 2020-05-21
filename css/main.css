@@ -2045,6 +2045,12 @@ footer .copyright {
   .making_delivery_convenient___simple_ .H-icons-block .H-icons {
     min-height: 120px;
   }
+  .caret {
+    float: right;
+  }
+  .caret:hover {
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 1400px) {
