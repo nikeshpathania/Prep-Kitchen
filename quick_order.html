@@ -36,87 +36,46 @@
       </div>
 
   </div>
-    <header>
-      <div id="overlay" class="sidenav">
+  <header>   
+    <nav class="navbar navbar-default" id="myHeader">
+      <div class="search-wrapper" id="searchBar">
+        <!-- /snippets/search-bar.liquid -->
   
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      
-        <div class="site-Menu">
   
-        <ul class="D_site-Menu">
-          <li><a href="myaccount.html">My Account</a>
-          <ul>
-            <li><a href="">Sub Menu</a></li>
-          </ul></li>
-          <li><a href="myaccount.html">Re-Order Previous</a></li>
-          <li><a href="/">Home</a></li>
-          <li><a href="how_it_works.html">How It Works Page</a></li>
-          <li><a href="product_page.html">Product</a></li>
-          <li><a href="location_finder.html">Location Finder</a></li>
-          <li><a href="nutrition_coaching.html">Nutrition Coaching</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="protein_carbs_vegetable.html">Protein, Carbs, Vegetables</a></li>
-          <li><a href="quick_order.html">Quick Order</a></li>
-          <li><a href="rewards.html">Rewards</a></li>
-          <li><a href="subscription.html">Subscription</a></li>
-          <li><a href="join.html">Join</a></li>
-         
-          <li><a href="plan.html">Plan</a></li>
+  <form class="input-group search-bar" >
+    <div class="icon-wrapper">
+      <span class="icon-fallback-text">
+        <span class="icon icon-search" aria-hidden="true"><img src="images/search_icon.svg" alt=""></span>
         
-          <li><a href="custom_order.html">Custom Order</a></li>
-          <li><a href="custom_order1.html">Custom Order1</a></li>
-      </ul> 
+      </span>
     </div>
+    <div class="form-group">
+      <input type="search" name="q" value="" placeholder="Search our store" class="search_input" aria-label="Search our store">
     </div>
+    <div class="button-wrapper">
+      <span class="icon icon-close" aria-hidden="true"><img src="images/cross.svg" alt=""></span>
+    </div>
+  </form>
+      </div>
      
-      
-      <nav class="navbar navbar-default" id="myHeader">
-        <div class="search-wrapper" id="searchBar">
-          <!-- /snippets/search-bar.liquid -->
-    
-    
-    <form class="input-group search-bar" >
-      <div class="icon-wrapper">
-        <span class="icon-fallback-text">
-          <span class="icon icon-search" aria-hidden="true"><img src="images/search_icon.svg" alt=""></span>
-          
-        </span>
-      </div>
-      <div class="form-group">
-        <input type="search" name="q" value="" placeholder="Search our store" class="search_input" aria-label="Search our store">
-      </div>
-      <div class="button-wrapper">
-        <span class="icon icon-close" aria-hidden="true"><img src="images/cross.svg" alt=""></span>
-      </div>
-    </form>
-        </div>
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="float-left">
-            <span class="menu-btn" onclick="openNav()">
-             <img id="open-menu" src="images/menu.svg" alt=""> 
-          </span>
-          </div>
-  
+
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-sm-12">
           <div class="nav-container">
-            <div id="logo">
-              <a href="index.html">
-                <img src="images/logo.svg" alt="">
-                      </a>
-  
-                  </div>
-                  <div id="top-right">
-                    <div class="search-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.182 33.959">
-                        <g transform="translate(451.417 -12.383)"><path class="a" d="M-306.463,68.278a1.142,1.142,0,0,0-1.287,1.131h0a9.152,9.152,0,0,1,9.149,9.155h0a1.142,1.142,0,0,0,1.13-1.288A10.384,10.384,0,0,0-306.463,68.278Z" transform="translate(-126.668 -49.273)"/><path class="a" d="M-409.889,36.192l-7.571-2.968a2.631,2.631,0,0,0-.414-.124,17.006,17.006,0,0,0-10.366-19.545,17,17,0,0,0-22.005,9.61,17,17,0,0,0,9.61,22.006,17.006,17.006,0,0,0,20.888-7.291,2.609,2.609,0,0,0,.388.191l7.57,2.968a2.6,2.6,0,0,0,3.374-1.473h0A2.6,2.6,0,0,0-409.889,36.192Zm-13.147-2.359a12.26,12.26,0,0,1-15.872,6.931,12.26,12.26,0,0,1-6.931-15.872,12.26,12.26,0,0,1,15.872-6.931A12.26,12.26,0,0,1-423.036,33.833Z" transform="translate(0)"/></g></svg>
-                    </div>
-                    <div class="btn_group">
-                    <button class="btn btn-green">
-                      Re-order Previous
-                    </button>
-                    <button class="btn btn-black">
-                      My Account
-                    </button>
+
+            <div id="top-right">
+                <div class="search-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.182 33.959">
+                    <g transform="translate(451.417 -12.383)"><path class="a" d="M-306.463,68.278a1.142,1.142,0,0,0-1.287,1.131h0a9.152,9.152,0,0,1,9.149,9.155h0a1.142,1.142,0,0,0,1.13-1.288A10.384,10.384,0,0,0-306.463,68.278Z" transform="translate(-126.668 -49.273)"/><path class="a" d="M-409.889,36.192l-7.571-2.968a2.631,2.631,0,0,0-.414-.124,17.006,17.006,0,0,0-10.366-19.545,17,17,0,0,0-22.005,9.61,17,17,0,0,0,9.61,22.006,17.006,17.006,0,0,0,20.888-7.291,2.609,2.609,0,0,0,.388.191l7.57,2.968a2.6,2.6,0,0,0,3.374-1.473h0A2.6,2.6,0,0,0-409.889,36.192Zm-13.147-2.359a12.26,12.26,0,0,1-15.872,6.931,12.26,12.26,0,0,1-6.931-15.872,12.26,12.26,0,0,1,15.872-6.931A12.26,12.26,0,0,1-423.036,33.833Z" transform="translate(0)"/></g></svg>
+                </div>
+                  <div class="btn_group">
+                  <button class="btn btn-green">
+                    Re-order Previous
+                  </button>
+                   <button class="btn btn-black">
+                    <a href="myaccount.html">My Account</a>
+                  </button>
                   </div>
                     <div class="cart-item"><span class="badge">0</span>
                       <svg viewBox="0 0 32.57 32.57">
@@ -124,15 +83,147 @@
                         <path class="a" d="M-1031.616-131.5a3.267,3.267,0,0,0-3.257,3.257,3.267,3.267,0,0,0,3.257,3.257,3.266,3.266,0,0,0,3.257-3.257A3.266,3.266,0,0,0-1031.616-131.5Zm-9.771-26.056v3.257h3.257l5.862,12.377-2.28,3.908a5.8,5.8,0,0,0-.326,1.629,3.267,3.267,0,0,0,3.257,3.257h19.543v-3.257h-18.891a.35.35,0,0,1-.326-.326v-.163l1.466-2.768h12.051a2.97,2.97,0,0,0,2.768-1.628l5.862-10.586a.9.9,0,0,0,.326-.814,1.539,1.539,0,0,0-1.628-1.628h-24.1l-1.466-3.257Zm26.056,26.056a3.267,3.267,0,0,0-3.257,3.257,3.267,3.267,0,0,0,3.257,3.257,3.267,3.267,0,0,0,3.257-3.257A3.267,3.267,0,0,0-1015.331-131.5Z" transform="translate(1041.387 157.552)"/></g>
                         </svg>
                   </div>
-  
-                  </div>
-          </div>
+
+            </div>
+    </div>
+           <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"  onclick="openNav();openOffcanvas()">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <div class="navbar_mene_text">Menu</div>
+              </button>
+             
+              <a class="navbar-brand"  href="index.html">
+              <img src="images/logo.svg" alt="">
+              </a>
+           </div>
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <a href="javascript:void(0)" class="navbar-toggle collapsed closebtn" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"  onclick="closeNav()">&lt;</a>
+            <ul class="nav navbar-nav">
+              <li>
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
     
-      
-         
-        </div><!-- /.container-fluid -->
-      </nav>
-    </header>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                     
+                      <li class="dropdown-item dropdown">
+                          <a class="dropdown-toggle" id="dropdown1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bulk Basic <span class="caret"></span></a>
+                          <ul class="dropdown-menu" aria-labelledby="dropdown1-1">
+                              <li class="dropdown-item"><a href="#">Protien</a></li>
+                              <li class="dropdown-item"><a href="#">Carbs</a></li>
+                              <li class="dropdown-item"><a href="#">Vegitables</a></li>
+                             
+                          </ul>
+                      </li>
+                      <li class="dropdown-item"><a href="#">Breakfast</a></li>
+                      <li class="dropdown-item dropdown">
+                        <a class="dropdown-toggle" id="dropdown1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PK Meals <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown1-1">
+                            <li class="dropdown-item" ><a href="#">Chef Inspired</a></li>
+                            <li class="dropdown-item" ><a href="#">Classic Prepped</a></li>
+                        </ul>
+                    </li>
+                  
+                    <li class="dropdown-item" ><a href="#">Build Your Meal</a></li>
+                      <li class="dropdown-item dropdown">
+                        <a class="dropdown-toggle" id="dropdown1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Low Carb Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown1-1">
+                            <li class="dropdown-item" ><a href="#">Low Carb</a></li>
+                            <li class="dropdown-item"><a href="#">Keto</a></li>
+                            <li class="dropdown-item"><a href="#">Paleo</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="" class="dropdown-toggle" id="dropdown1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dietary Meny Filters<span class="caret"></span></a>
+                      <ul class="dropdown-menu level15" role="menu">
+                        <li class="dropdown-item">
+                        <a href="#">
+                          Guleten Free</a></li>
+                          <li class="dropdown-item">
+                        <a href="#">
+                          Vegeterian</a></li>
+                          <li class="dropdown-item">
+                        <a href="#">
+                          Vegan</li>
+                          <li class="dropdown-item">
+                        <a href="#">
+                          Pescatarian</a></li>
+                          <li class="dropdown-item">
+                        <a href="#">
+                          Daiary Free</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                      <a href="#">Housemade Sauces</a>
+                    </li>
+                    <li>
+                      <a href="#">Snacks by Cravery</a>
+                    </li>
+                    <li>
+                      <a href="#">Gifts Cards</a>
+                    </li>
+                  </ul>
+              </li>
+    
+              <li>
+                  <a class="nav-link" href="#">New Customer Offer</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">How It works <span class="caret"></span></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                      <li class="dropdown-item"><a href="how_it_works.html">How It Works</a></li>
+                      <li class="dropdown-item"><a href="faq.html">FAQs</a></li>
+                      <li class="dropdown-item"><a href="rewards.html">Rewards FAQs</a></li>
+                      
+                  </ul>
+              </li>
+              <li class="dropdown-item dropdown">
+                <a class="dropdown-toggle" id="dropdown2-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown2-1">
+                    <li class="dropdown-item"><a href="#">Pk Creations</a></li>
+                    <li class="dropdown-item"><a href="#">Contact Us</a></li>
+                    <li class="dropdown-item"><a href="#">Blog</a></li>
+                    
+                </ul>
+            </li>
+            <li class="dropdown-item dropdown">
+              <a class="dropdown-toggle" id="dropdown2-1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reviews <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown2-1-1">
+                  <li class="dropdown-item"><a href="#">Reviews</a></li>
+                  <li class="dropdown-item"><a href="#">Testimonials</a></li>
+              </ul>
+          </li>
+          <li class="dropdown-item dropdown">
+              <a class="dropdown-toggle" id="dropdown2-1-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rewards & Promotions <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown2-1-2">
+                  <li class="dropdown-item"><a href="#">Pk Rewards</a></li>
+                  <li class="dropdown-item"><a href="#">Rewards FAQs</a></li>
+                  <li class="dropdown-item"><a href="#">First Responder Discount</a></li>
+                  <li class="dropdown-item"><a href="#">New Customer Offer 30% Off</a></li>
+              </ul>
+          </li>
+          <li>
+            <a class="nav-link" href="#">Order Drop Off Locations</a>
+        </li>
+          </ul>
+           </div>
+           <!-- /.navbar-collapse -->
+        </div>
+      </div>
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="only_for_mobile">
+    <a href="index.html">
+      <img src="images/logo.svg" alt="">
+      </a>
+    </div>
+  </header>
 <section class="page-header" >
   <div class="container">
     
@@ -628,6 +719,37 @@ document.getElementById('checkout').addEventListener('click', function() {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script type="text/javascript">
+  $(document).ready(function () {
+  
+  $('.navbar .dropdown-item').on('click', function (e) {
+      var $el = $(this).children('.dropdown-toggle');
+      var $parent = $el.offsetParent(".dropdown-menu");
+      $(this).parent("li").toggleClass('open');
+  
+      if (!$parent.parent().hasClass('navbar-nav')) {
+          if ($parent.hasClass('show')) {
+              $parent.removeClass('show');
+              $el.next().removeClass('show');
+              $el.next().css({"top": -999, "left": -999});
+          } else {
+              $parent.parent().find('.show').removeClass('show');
+              $parent.addClass('show');
+              $el.next().addClass('show');
+              $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
+          }
+          e.preventDefault();
+          e.stopPropagation();
+      }
+  });
+  
+  $('.navbar .dropdown').on('hidden.bs.dropdown', function () {
+      $(this).find('li.dropdown').removeClass('show open');
+      $(this).find('ul.dropdown-menu').removeClass('show open');
+  });
+  
+  });
+  
+  </script>
 </body>
 </html>
