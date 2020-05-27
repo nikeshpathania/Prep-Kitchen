@@ -429,16 +429,27 @@ html {
     }
     .review_block-container {
         width: 100%;
+        height: 260px;
         position: relative;
         margin: 0 auto;
         overflow: hidden;
+
         .review_block {
             display: inline-block;
-            width: 273px;
+            width: calc(33.3% - 15px);
+            height: 250px;
+            padding-bottom: 20px;
+            padding-right: 0px;
+            vertical-align: top;
+            font-size: 15px;
+            text-align: left;
+            padding:10px;
+            margin: 5px;
+            box-shadow: 0 0 4px #ccc;
             &:before {
                 content: attr(data-before);
-                position: absolute;
-                margin-left: -90px;
+                // position: absolute;
+                // margin-left: -90px;
                 margin-top: 2px;
                 font-size: em(12);
             }
