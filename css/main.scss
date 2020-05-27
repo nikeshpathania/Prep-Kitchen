@@ -231,8 +231,8 @@ html {
         }
         .new-Alert {
             position: absolute;
-            right: 20px;
-            bottom: 20px;
+            right: 75px;
+            bottom: 75px;
             width: 350px;
             background-color: map-get($colors, whiteColor);
             border-radius: 0px 50px 50px 50px;
@@ -387,6 +387,8 @@ html {
         }
         .H-icons-block {
             overflow: hidden;
+            margin-top:35px;
+
             .H-icons {
                 width: 100px;
                 min-height: 100px;
@@ -399,8 +401,12 @@ html {
                 }
                 p {
                     padding: 0;
+                    line-height: normal;
                 }
             }
+        }
+        .content {
+            margin-top:15px;
         }
     }
     .green_text {
@@ -619,11 +625,19 @@ html {
 }
 .navbar-header .navbar_mene_text {
     position: absolute;
-    margin-left: 28px;
+    margin-left: 35px;
     margin-top: -16px;
     color: map-get($colors , primary );
 }
    
+    .navbar-default .navbar-nav>li>a:focus, 
+    .navbar-default .navbar-nav>li>a:hover,
+    .dropdown-menu>li>a:focus, 
+    .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus, 
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
+        color: map-get($colors , primary );
+    }
 
     .navbar-default .navbar-nav>.open>a, 
     .navbar-default .navbar-nav>.open>a:focus, 
@@ -631,6 +645,7 @@ html {
         background-color: #fff;
         border-bottom: 1px solid map-get($colors , primary );
         color: map-get($colors , primary );
+        cursor: pointer;
     }
     .navbar>.container .navbar-brand, 
     .navbar>.container-fluid .navbar-brand {
@@ -650,8 +665,10 @@ html {
         text-transform: capitalize;
         font-family: 'rubikregular';
     }
-    .navbar-default .navbar-nav>li>a {
+    .navbar-default .navbar-nav>li>a,
+    .dropdown-menu>li>a {
         color: map-get($colors , dark-fontColor );
+        cursor: pointer;
     }
     .navbar-brand{
         padding: 8px;
@@ -881,7 +898,7 @@ html {
         border: none;
         text-align: center;
         img {
-            height: 60px;
+            height: 70px;
         }
         .caption {
             h4 {
@@ -2039,8 +2056,8 @@ html {
 
    .caret {
        float: right;
-       &:hover {
-           margin-top:0
+       &:after {
+           margin-top:0;
        }
    }
 }
@@ -2056,7 +2073,7 @@ html {
 
 @include respond-above(sm) {
     .making_delivery_convenient___simple_ .H-icons-block .H-icons img {
-        width: 80px;
+        width: 70px;
         margin-bottom: 15px;
     }
 }
