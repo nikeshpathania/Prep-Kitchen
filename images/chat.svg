@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64.546" height="74.221" viewBox="0 0 64.546 74.221">
-  <g id="chat" transform="translate(-931 -492.428)">
+<svg xmlns="http://www.w3.org/2000/svg" width="61" height="67.63" viewBox="0 0 61 67.63">
+  <g id="chat" transform="translate(-931 -492.426)">
     <g id="Group_2" data-name="Group 2" transform="translate(931 566.856)">
-      <path id="Path_5" data-name="Path 5" d="M34.7-60.428,4.329-31.2,33.671-.707,64.046-29.938Z" fill="none" stroke="#23d16a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       <path id="Path_6" data-name="Path 6" d="M34.838-37.579,19.164-22.453,34.374-6.8,50.462-23.1Z" fill="#23d16a" fill-rule="evenodd"/>
       <path id="Path_7" data-name="Path 7" d="M61-45.53a28.912,28.912,0,0,0-28.9-28.9H28.9A28.912,28.912,0,0,0,0-45.53a28.912,28.912,0,0,0,28.9,28.9h3.2A28.912,28.912,0,0,0,61-45.53Z" fill="#23d16a" fill-rule="evenodd"/>
       <path id="Path_8" data-name="Path 8" d="M44.278-46.751A14.955,14.955,0,0,0,29.33-61.7H27.673A14.955,14.955,0,0,0,12.726-46.751,14.955,14.955,0,0,0,27.673-31.8H29.33A14.955,14.955,0,0,0,44.278-46.751Z" fill="#fff" fill-rule="evenodd"/>
       <path id="Path_9" data-name="Path 9" d="M28.5-36.681v10.538l9.912-8.7Z" fill="#fff" fill-rule="evenodd"/>
     </g>
-    <text id="CHAT-2" data-name="CHAT" transform="translate(947 524)" fill="#48d766" font-size="8" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="0" y="0">CHAT</tspan></text>
+    <text id="CHAT-2" data-name="CHAT" transform="translate(948 523.854)" fill="#23d16a" font-size="9" font-family="Rubik-Regular, Rubik"><tspan x="0" y="0">CHAT</tspan></text>
   </g>
 </svg>

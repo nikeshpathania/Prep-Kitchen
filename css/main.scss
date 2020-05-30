@@ -195,7 +195,7 @@ html {
         background-repeat: no-repeat;
         background-position: top;
         background-size: 100%;
-        height: calc(100vh - 50px);
+        height: calc(100vh);
         text-transform: lowercase;
         font-family: 'rubikmedium';
         position: relative;
@@ -212,7 +212,7 @@ html {
         }
 
         .header-hero-contentBlock {
-            max-width: 500px;
+            max-width: 520px;
             position: absolute;
             bottom: 10%;
             left: 20%;
@@ -260,6 +260,8 @@ html {
                 margin-bottom: 20px;
 
                 .btn {
+                    padding:15px;
+
                     @include respond-below(xs){
                         font-size: 12px;
                         min-width: 89px;
@@ -388,12 +390,13 @@ html {
             .search-icon {
                 float: left;
                 cursor: pointer;
+
                 svg {
                     width: 28px;
                     margin-top: 16px;
                     margin-right: 7px;
                     .a {
-                        fill: #707070;
+                        fill: #B2B2B2;
                     }
                 }
             }
@@ -579,8 +582,7 @@ html {
         }
     }
     .delivery_option {
-        background: url(../images/pk-1-01.svg);
-        background-size: 100%;
+        background-color: #000;
         overflow: hidden;
         .bg {
             width: 100%;
@@ -749,6 +751,7 @@ html {
             }
         }
         .instagram_block {
+            margin-bottom: 15px;
             img {
                 width: 200px;
             }
@@ -764,6 +767,7 @@ html {
             background: map-get($colors, dark-fontColor);
             color: map-get($colors, whiteColor);
             padding: 15px;
+            margin-top: 15px;
         }
     }
     // Bootstrap Update
@@ -786,10 +790,11 @@ html {
      }
     .navbar-default .navbar-toggle {
         border:none;
-        margin-top: 16px;
+        margin-top: 12px;
 
         .icon-bar {
             background-color: map-get($colors , primary );
+            height: 3px;
         }
         &:hover, &:focus{
             background-color:transparent;
@@ -799,7 +804,7 @@ html {
 .navbar-header .navbar_mene_text {
     position: absolute;
     margin-left: 35px;
-    margin-top: -16px;
+    margin-top: -17px;
     color: map-get($colors , primary );
 }
    
@@ -875,7 +880,7 @@ html {
         }
 
         img{
-            width: 100px;
+            width: 120px;
             @include respond-below(xs) {
                 width: 50px;
                 margin: 0 auto;
@@ -1065,17 +1070,18 @@ html {
       }
 
       .closebtn {
+        display: none;
         position: absolute;
         border:none;
         background: none;
         top: 0;
-        margin-top:0;
+        margin-top:5px!important;
         margin-right:5px;
         z-index: 9;
-        right: 0px;
+        left: 0px;
         padding: 0;
         font-size: 36px;
-        margin-left: 50px;
+        margin-left: 23px;
         color: map-get($colors , primary );
 
         &:hover {
@@ -1097,7 +1103,7 @@ html {
         min-height: auto;
     }
     .page-title {
-        font-family: 'rubikmedium';
+        @extend .sub-heading;
         color: map-get($colors, whiteColor);
         text-transform: lowercase;
         margin-top: em(30);
@@ -1136,20 +1142,21 @@ html {
 
 .section-heading {
     @extend .sub-heading;
+    margin-top: em(10);
+    margin-bottom: em(20);
 }
 
 .three_easy_meal_options {
     .media {
         margin-top: em(15);
-        margin-bottom: em(30);
+        margin-bottom: em(35);
     }
     .media-left {
         vertical-align: top;
 
         img {
-            @include respond-below(xs) {
-                width: 100px;
-            }
+            width: 90px;
+            margin-right: 10px;
         }
     }
     .btn {
@@ -1159,15 +1166,22 @@ html {
 
 .delivery_pickup {
     color: map-get($colors, whiteColor);
+   
     h2 {
         @extend .sub-heading;
         color: map-get($colors, whiteColor);
+    }
+    dl {
+        margin-bottom: 0;
     }
     dt {
         font-size: em(22);
     }
     dd {
         margin-bottom: 30px;
+        &:last-child{
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -1394,7 +1408,8 @@ html {
             color: map-get($colors , primary );
         }
         .p_sku_block {
-            margin-top: em(20);
+            margin-top: em(60);
+
             .skuName { 
                 font-family: 'rubikmedium';
                 font-size: em(30);
@@ -1769,6 +1784,7 @@ html {
 
 .calender {
     margin-top: em(30);
+    margin-bottom: em(10);
 
     h2 {
         font-size: em(30);
@@ -2314,26 +2330,54 @@ html {
     display: none;
 }
 
+.hideMenu {
+    @include respond-below(xs) {
+        opacity: 0;
+        display: none;
+    }
+}
+
 @include respond-below(xs) {
         .navbar-collapse {
             height:100%;
             position: fixed;
-            left: -250px;
-            width: 250px;
-            top: 0;
-            z-index: 9999;
-            background: #fff;
-            @include transition;
-            box-shadow: 0  9px 50px rgba(35, 209, 106, 0.72);
-        
-        &.in{
             left: 0;
-        }
-        .navbar-nav{
-            float: left;
             width: 100%;
+            // top: 0;
+            z-index: 9999;
+            background-image: url(../images/pk-green-1-01.svg);
+            @include transition;
+            // box-shadow: 0  9px 50px rgba(35, 209, 106, 0.72);
+        
+        // &.in{
+        //     left: 0;
+        // }
+        .navbar-nav{
+            float: none;
+            width: 70%;
             max-height: 500px;
             overflow: auto;
+            margin: 10% auto;
+
+            li {
+                font-size: em(20);
+                a{
+                    color: map-get($colors , whiteColor );
+                }
+            }
+            .open .dropdown-menu{
+                li {
+                    a{
+                        color: map-get($colors , whiteColor )!important;
+                    }
+
+                    li {
+                        margin-left: 10px;
+                    }
+                }
+                    
+            }
+            
         }
     }
 }
