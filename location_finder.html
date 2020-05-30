@@ -67,16 +67,20 @@
              <!-- Brand and toggle get grouped for better mobile display -->
              <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"  onclick="openNav();openOffcanvas()">
-                <span class="icon-bar"></span>
+                <span class="hid_icon">
+                  <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <div class="navbar_mene_text">Menu</div>
+              </span>
+                
                 </button>
-               
-              <a class="navbar-brand"  href="index.html">
-              <img src="images/logo.svg" class="desktop" alt="">
-              <img src="images/tpk-logo.svg" class="mobile" alt="">
-              </a>
+                <a href="javascript:void(0)" class="navbar-toggle collapsed closebtn" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"  onclick="closeNav()">&#10005;</a>
+                <a class="navbar-brand"  href="index.html">
+                <img src="images/logo.svg" class="desktop" alt="">
+                <img src="images/tpk-logo.svg" class="mobile" alt="">
+                </a>
+                
              </div>
              <!-- Collect the nav links, forms, and other content for toggling -->
              <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
@@ -208,134 +212,513 @@
 
 
     <section>
-        <div class="container">
-            <h2 class="sub-heading">Pickup locator</h2>
-            <div class="map"><img src="images/map.jpg" class="img-responsive" alt=""></div>
-        </div>
-    </section>
-    <section>
-        <div class="newsletter_block">
-        <div class="container">
-          <form class="form-inline col-sm-8 col-sm-offset-2">
-            
-            <div class="form-group">
-              <label for="exampleInputEmail2">Subscribe to our newsletter</label>
-              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="E-mail">
-            </div>
-            <img src="images/path_1472.png" alt="">
-          </form>
-        </div>
-      </div>
-      </section>
-      <footer>
       <div class="container">
-        <div class="col-sm-3" data-aos="zoom-in">
-          <h3>Menu</h3>
-          <ul>
-            <li><a href=""> Bulk basics</a></li>
-              <li><a href="#"> Prepared meals</a></li>
-              <li><a href="#">Build your own</a></li>
-              <li><a href="#">How it works</a></li>
-             <li><a href="#">Meal creations</a></li>
-             <li>
-               <div class="faq_label">faq</div>
-            <a href="">Nutrition coaching</a></li>
-      
-          </ul>
-        </div>
-        <div class="col-sm-3" data-aos="zoom-in">
-          <h3>Contact Us</h3>
-          <ul><li>
-            us Follow us Instagram 214-876-1653
-      
-          </li>
-        <li> <a href="mailto:info@dallasprepkitchen.com"> info@dallasprepkitchen.com</a></li></ul>
-        </div>
-        <div class="col-sm-3" data-aos="zoom-in">
-          <h3>Follow Us</h3>
-          <div class="social_media"><img src="images/instagram_ek1.png" alt=""> <img src="images/facebook_f.png" alt=""> <img src="images/youtube.png" alt=""></div>
-      
-        </div>
-        <div class="col-sm-3" data-aos="zoom-in">
-          <h3>Instagram</h3>
-          <div class="instagram_block"><img src="images/img_5286.png" alt=""></div>
-        </div>
-       
-      </div>
-      <div class="copyright">
-        <div class="container">Copyright 2019 Dallas Prep Kitchen - All Rights Reserved</div></div>
-      </footer>
-      <div class="chat_widget">
-        <img src="images/chat.svg" alt="">
-      </div>
-    </div>
-      <script src="js/menu.js"></script>   
-    <script>
+          <h2 class="sub-heading">Pickup locator</h2>
+          
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqlL7oLI6oCxFNgb2OTVYWMU6HHVSd6E4&sensor=false&language=en" ></script>
+  <script>
+  var j_included = false;
+  if (typeof jQuery == 'undefined') {
+      j_included = true;
+      document.write("<scr" + "ipt src='/apps/store-locator/js/jquery.js' type='text/javascript'></scr" + "ipt>");
+  }
+  </script>
+  
+  <link href="/apps/store-locator/frontend.css?v4" rel="stylesheet">
+  <script>
+      if(j_included){
+          jQuery.noConflict();
+      }
+      var boldMap;
+      var markersArray = [];
+      var markersCoords = [];
+      var addresses = [];
+      var infoPopup;
+      var geocoder;
+      var mainIcon;
+      var youIcon;
+      var myshadow;
+      var find_directions;
+      var directionsService;
+      var directionsDisplay;
+      var getDirections = 'Get Directions';
+      var noStoresFound = 'No Stores Found';
+      var youAreHere = 'You Are Here';
 
-        var slideIndex = 1;
-        showDivs(slideIndex);
+markersCoords.push({lat: 32.818269, lng: -97.120546, id:11566426, marker_colour: 'main', updated_at: '2020-05-18 12:54:19', address:'&lt;span class=&#039;name&#039;&gt; EULESS - Elite Fitness&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 2170 Regal Pkwy&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Euless&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76040&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.896526, lng: -97.146090, id:11565853, marker_colour: 'main', updated_at: '2020-05-16 13:33:53', address:'&lt;span class=&#039;name&#039;&gt; COLLEYVILLE - NexGen Fitness&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 6000 Colleyville Blvd #140&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Colleyville&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76034&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.684965, lng: -97.130707, id:11566431, marker_colour: 'main', updated_at: '2020-05-18 13:05:05', address:'&lt;span class=&#039;name&#039;&gt; ARLINGTON - Nutrition Nation Cooper St&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 3701 S Cooper St #167&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Arlington&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76015&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.648857, lng: -97.058793, id:8723560, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; GRAND PRAIRIE - Ultimate Sport Nutrition&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 3040 W Camp Wisdom Rd, #150&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Grand Prairie&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75052&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.973998, lng: -96.993112, id:8134766, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; COPPELL - Smoothie Factory&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 230 N Denton Tap Rd, #110&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Coppell&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75019&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.784121, lng: -96.818316, id:11649625, marker_colour: 'main', updated_at: '2020-05-27 10:33:10', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - D-Town CrossFit&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 155 Parkhouse St &lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75207&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.850093, lng: -96.821578, id:11581365, marker_colour: 'main', updated_at: '2020-05-19 20:35:25', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - CBD Alternative Wellness&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 7719 Inwood Rd&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75209&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.809910, lng: -96.809205, id:7351063, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - Cryo1one&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 3818 Cedar Springs Rd, #104&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75219&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.851368, lng: -96.809926, id:7788942, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; UNIVERSITY PARK - Formula Wellness&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 4342 Lovers Ln&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; University Park&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75225&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.800155, lng: -96.801402, id:7223068, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - Smoothie Factory&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 2817 Howell Street #210&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75204&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.806974, lng: -96.797445, id:8166388, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - Formula Wellness &lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 3600 McKinney Ave, #100&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (West Village)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75204&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.863196, lng: -96.807048, id:11566429, marker_colour: 'main', updated_at: '2020-05-18 13:00:18', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - Larry North Fitness&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 6030 Luther Ln #180&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (Preston Center)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75225&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.671186, lng: -97.203962, id:11566433, marker_colour: 'main', updated_at: '2020-05-18 13:07:52', address:'&lt;span class=&#039;name&#039;&gt; ARLINGTON - Nutrition Nation Little Rd&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 4884 Little Rd&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Arlington&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76017&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.999857, lng: -96.963323, id:8064520, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; LEWISVILLE - Ultimate Sport Nutrition&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 2601 S Stemmons Fwy, #110&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Lewisville&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75067&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.929308, lng: -96.834263, id:11580333, marker_colour: 'main', updated_at: '2020-05-19 11:29:09', address:'&lt;span class=&#039;name&#039;&gt; FARMERS BRANCH - Extreme Studio Performance&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 4435 McEwen Rd&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Farmers Branch&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75244&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.836152, lng: -96.769623, id:7221623, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - Total Nutrition Mockingbird&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 5706 E Mockingbird Ln&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75206&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.874578, lng: -96.763157, id:11578899, marker_colour: 'main', updated_at: '2020-05-18 19:26:58', address:'&lt;span class=&#039;name&#039;&gt; DALLAS - Greater Than Performance &amp; Rehab&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 7035 Greenville Ave #101&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (MEMBERS ONLY)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Dallas&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75231&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.985826, lng: -96.852996, id:7375301, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; CARROLLTON - Nutrition Nation&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 2810 E Trinity Mills Rd, #131&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Carrollton&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75006&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 33.021428, lng: -96.915026, id:11649622, marker_colour: 'main', updated_at: '2020-05-27 10:16:27', address:'&lt;span class=&#039;name&#039;&gt; CARROLLTON - F45 Training Hebron&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 1001 E Hebron Pkwy&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (MEMBERS ONLY)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Carrollton&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75010&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 33.080514, lng: -96.822452, id:7980881, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; PLANO - Cryo1one&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 5840 Legacy Circle, D175&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (Shops of Legacy)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Plano&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75024&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.812389, lng: -96.629325, id:11043682, marker_colour: 'main', updated_at: '2020-05-15 09:25:18', address:'&lt;span class=&#039;name&#039;&gt; MESQUITE - Nutrition Nation&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 3501 Towne Crossing Blvd&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Mesquite&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75150&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.757884, lng: -97.427356, id:7788941, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; WESTWORTH VILLIAGE - Nutrition Nation&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 6530 Hawks Creek Ct, #101&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Westworth Village&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76114&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.658776, lng: -97.402114, id:9843340, marker_colour: 'main', updated_at: '2020-04-28 09:25:19', address:'&lt;span class=&#039;name&#039;&gt; FORT WORTH - Nutrition Nation Hulen&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 6080 S Hulen St, #110&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Fort Worth&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76132&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.809668, lng: -96.612889, id:7221620, marker_colour: 'main', updated_at: '2020-05-18 22:11:52', address:'&lt;span class=&#039;name&#039;&gt; MESQUITE - Smoothie Factory&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 1220 N Town E Blvd, #218&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Mesquite&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75150&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 33.122519, lng: -96.823565, id:7220007, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; FRISCO - Complete Health&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 5355 Dallas Pkwy, #625&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (Formerly Complete Nutrition)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Frisco&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75034&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 33.220355, lng: -96.931892, id:11002611, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; LITTLE ELM - F45 Training Little Elm&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 26744 E University Dr #100, Little Elm, TX 76227&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (LIMITED HOURS) (MEMBERS ONLY)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Little Elm&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 76227&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 33.118476, lng: -96.667782, id:11578898, marker_colour: 'main', updated_at: '2020-05-18 19:19:46', address:'&lt;span class=&#039;name&#039;&gt; ALLEN - Destination Gym&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 1300 N Central Expy #300&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Allen&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75013&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.385219, lng: -96.845800, id:11361302, marker_colour: 'main', updated_at: '2020-05-05 13:14:13', address:'&lt;span class=&#039;name&#039;&gt; WAXAHACHIE - Shelby Symmetry&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 217 E Main St&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Waxahachie&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75165&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 32.755462, lng: -96.464538, id:8658074, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; FORNEY - Nutrition Nation&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 108 E US Hwy 80, #130&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; Forney&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75126&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});markersCoords.push({lat: 33.174005, lng: -96.642516, id:7221618, marker_colour: 'main', updated_at: '2020-04-26 13:46:32', address:'&lt;span class=&#039;name&#039;&gt; MCKINNEY - Legend Nutrition&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address&#039;&gt; 2851 Craig Dr, #204&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;address2&#039;&gt; (Formerly Ideal Nutrition)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#039;city&#039;&gt; McKinney&lt;/span&gt;, &lt;span class=&#039;prov_state&#039;&gt; Texas&lt;/span&gt; &lt;span class=&#039;postal_zip&#039;&gt; 75070&lt;/span&gt;, &lt;span class=&#039;country&#039;&gt; United States&lt;/span&gt;'});
+  function initialize() {
+      mainIcon = "images/map-pin-green.png";
+      youIcon = "/apps/store-locator/markers/map-pin-black.png";
+      myshadow = "/apps/store-locator/markers/shadow.png";
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
+      directionsService = new google.maps.DirectionsService();
+      directionsDisplay = new google.maps.DirectionsRenderer();
 
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("slide_reviews");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            };
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-    </script>
-    <script src="js/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1200,
-        })
-    </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
+      geocoder = new google.maps.Geocoder();
+      infoPopup = new google.maps.InfoWindow({
+          content: "",
+          maxWidth: 330
+      });
+      var mapOptions = {
+          zoom: 10,
+          center: new google.maps.LatLng(32.804590,-97.027130),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      boldMap = new google.maps.Map(document.getElementById('store_map'),
+      mapOptions);
+
       
-      $('.navbar .dropdown-item').on('click', function (e) {
-          var $el = $(this).children('.dropdown-toggle');
-          var $parent = $el.offsetParent(".dropdown-menu");
-          $(this).parent("li").toggleClass('open');
-      
-          if (!$parent.parent().hasClass('navbar-nav')) {
-              if ($parent.hasClass('show')) {
-                  $parent.removeClass('show');
-                  $el.next().removeClass('show');
-                  $el.next().css({"top": -999, "left": -999});
-              } else {
-                  $parent.parent().find('.show').removeClass('show');
-                  $parent.addClass('show');
-                  $el.next().addClass('show');
-                  $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
-              }
-              e.preventDefault();
-              e.stopPropagation();
+      end_directions();
+
+      add_markers();
+
+      //google.maps.event.addListener(boldMap, 'dragend', find_new_stores);
+      jQuery('select[id^=custom_field_]').change(codeAddress);
+      jQuery('input[id^=search_filter_]').change(codeAddress);
+      //jQuery("input:text").click(function() { jQuery(this).select(); } );
+
+      jQuery('#address_search').keypress(function (e) {
+          if (e.which == 13) {
+              codeAddress();
           }
       });
-      
-      $('.navbar .dropdown').on('hidden.bs.dropdown', function () {
-          $(this).find('li.dropdown').removeClass('show open');
-          $(this).find('ul.dropdown-menu').removeClass('show open');
+      fixURLS();
+  }
+  function find_new_stores(show_dist){
+      get_new_stores(boldMap.getCenter().lat(), boldMap.getCenter().lng(), show_dist);
+  }
+
+  function add_markers(){
+      end_directions();
+      //remove old markers and forget about them
+      for(i=0;i<markersArray.length;i++){
+          google.maps.event.clearListeners(markersArray[i], 'click');
+          markersArray[i].setMap(null);
+      }
+      markersArray.length=0;
+      var bounds = new google.maps.LatLngBounds();
+
+      //add new markers (they are better anyways)
+      for(i=0; i<markersCoords.length;i++){
+          var myicon = mainIcon;
+          var mydrag = false;
+          if(markersCoords[i].id ==0){
+              myicon = youIcon;
+              mydrag = true;
+          }else if(markersCoords[i].marker_colour != "main"){
+              myicon="/apps/store-locator/markers/"+markersCoords[i].marker_colour+".png";
+          }
+          var myLatlng = new google.maps.LatLng(markersCoords[i].lat,markersCoords[i].lng);
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: boldMap,
+              draggable:mydrag,
+              animation: google.maps.Animation.DROP,
+              id:markersCoords[i].id,
+              updated_at:markersCoords[i].updated_at,
+              store_address:markersCoords[i].address,
+              icon:myicon,
+              shadow:myshadow
+          });
+          bounds.extend(marker.getPosition());
+
+          if(markersCoords[i].id ==0){
+              google.maps.event.addListener(marker, "dragend", function(event) {
+
+                  boldMap.setCenter(event.latLng);
+                  find_new_stores(1);
+
+              });
+          }
+
+          google.maps.event.addListener(marker, 'click', function() {
+              focus_and_popup(this.id, this.updated_at);
+          });
+
+          markersArray.push(marker);
+      }
+      if(markersArray.length>0 && addresses.length >0){
+          boldMap.fitBounds(bounds);
+      }
+  }
+
+  function get_new_stores(lat, lng, calc_distance){
+      var calc_dist = 0;
+      if(calc_distance == 1){
+          calc_dist=1;
+      }
+      var selectboxes = jQuery('select[id^=custom_field_]');
+      var cf_url = "";
+      for(i=0;i<selectboxes.length;i++){
+          var selectbox = selectboxes[i];
+          var val = jQuery(selectbox).children("option:selected").text();
+          if(val){
+              cf_url = cf_url + "&" + encodeURIComponent(selectbox.id) + "=" + encodeURIComponent(val);
+          }
+      }
+      selectboxes = jQuery('input[id^=search_filter_]:checked');
+      var sf_url = "";
+      var limit = jQuery("#limit").val();
+      var within_distance = jQuery("#within_distance").val();
+      for(i=0;i<selectboxes.length;i++){
+          var selectbox = selectboxes[i];
+          sf_url = sf_url + "&" + encodeURIComponent(selectbox.id) + "=1";
+      }
+      jQuery.getJSON('https://stores.boldapps.net/front-end/get_surrounding_stores.php?shop=prep-kitchen-dallas.myshopify.com&latitude='+lat+'&longitude='+lng + "&max_distance=" +within_distance + "&limit=" + limit + cf_url + sf_url + '&calc_distance='+calc_dist, set_stores)
+          .fail(function(err, data) {
+              if(err.status == 429){
+                  alert('There was an error, try again in a couple minutes');
+              }
+          });
+  }
+
+  function set_stores(data){
+      find_directions = false;
+      markersCoords.length=0;
+      addresses.length=0;
+
+      if(data.you){
+          markersCoords.push({lat: data.you.lat, lng: data.you.lng, id: 0, address:'', marker_colour:'', updated_at:''});
+          find_directions=true;
+      }
+
+      for(i=0;i<data.stores.length;i++){
+          markersCoords.push({lat: data.stores[i].lat, lng: data.stores[i].lng, id: data.stores[i].store_id, address:data.stores[i].summary, marker_colour:data.stores[i].pin_icon, updated_at:data.stores[i].updated_at});
+          addresses.push({id: data.stores[i].store_id, address:data.stores[i].summary, distance: data.stores[i].distance, website: data.stores[i].website, marker_colour:data.stores[i].pin_icon, updated_at:data.stores[i].updated_at});
+      }
+
+      jQuery(".addresses ul").slideUp(show_addresses);
+      add_markers();
+  }
+
+  function show_addresses(){
+      var html = "";
+      var directions ="";
+      for(i=0;i<addresses.length;i++){
+          var website = "";
+          var pin_colour = "";
+          if(find_directions){
+              directions="<div class='directions'><a href='#' onclick='calcRoute("+addresses[i].id+");return false;'>"+getDirections+"</a></div>";
+          }
+website="<div class='store_website'><a href='" + addresses[i].website + "' target='_blank'>" + addresses[i].website +"</a></div>";            if(addresses[i].marker_colour != "main"){
+              pin_colour = " style='background-image:url(\"/apps/store-locator/markers/"+addresses[i].marker_colour+"2.png\")' ";
+          }
+          html = html + "<li "+pin_colour+" onmouseover='hoverStart("+addresses[i].id+")' onmouseout='hoverStop("+addresses[i].id+")'><div class='distance'>"+addresses[i].distance+"</div><a href='#' onclick='focus_and_popup("+addresses[i].id+", \""+addresses[i].updated_at+"\"); return false;'>"+addresses[i].address+"</a>" + website + directions + "</li>";
+      }
+      if(addresses.length == 0){
+          html = "<li><div class='no_stores_found'>"+noStoresFound+"</div></li>";
+      }
+      jQuery(".addresses ul").html(html);
+      jQuery(".addresses ul").slideDown();
+      fixURLS();
+  }
+
+  function focus_and_popup(id, updated_at){
+      var marker;
+      var directions ="";
+      if(find_directions){
+          directions="<div class='directions'><a href='#' onclick='calcRoute("+id+");return false;'>"+getDirections+"</a></div>";
+      }
+
+      for(i=0; i<markersArray.length; i++){
+          if(markersArray[i].id == id && id > 0){
+              marker = markersArray[i];
+              boldMap.panTo(marker.getPosition());
+              //add price tier id to bust the cache because we want to get updated store details when we switch plans
+              jQuery.getJSON('https://stores.boldapps.net/front-end/get_store_info.php?shop=prep-kitchen-dallas.myshopify.com&data=detailed&store_id='+id+'&tm='+updated_at+'-'+25, function (data){
+                  infoPopup.close();
+                  infoPopup.setContent("<div class='gm_popup'>"+data.data + directions +"</div>");
+                  infoPopup.open(boldMap,marker);
+              });
+          }else if(markersArray[i].id == id && id == 0){
+              marker = markersArray[i];
+              boldMap.panTo(marker.getPosition());
+              infoPopup.close();
+              infoPopup.setContent("<div class='gm_popup'>"+ youAreHere  +"</div>");
+              infoPopup.open(boldMap,marker);
+          }
+      }
+  }
+
+  function codeAddress(){
+      var address = jQuery("#address_search").val();
+      if(address == "Postal/Zip Code"){
+          address="";
+      }
+      if(address){
+          geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                  boldMap.setCenter(results[0].geometry.location);
+                  find_new_stores(1);
+              } else {
+                  alert('Error finding your address please review your criteria and try again');
+              }
+          });
+      }else{
+          find_new_stores();
+      }
+
+  }
+
+  var to_marker;
+  function calcRoute(id) {
+      var from = false;
+      var to = false;
+      for(i=0; i<markersArray.length; i++){
+          if(markersArray[i].id == id){
+              to = markersArray[i];
+          }else if(markersArray[i].id == 0){
+              from = markersArray[i];
+          }
+      }
+      if(from && to){
+          to_marker=to;
+          var request = {
+              origin:from.getPosition(),
+              destination:to.getPosition(),
+              travelMode: google.maps.TravelMode.DRIVING,
+              unitSystem: google.maps.UnitSystem.IMPERIAL            };
+
+          directionsService.route(request, function(result, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                  directionsDisplay.setMap(boldMap);
+                  directionsDisplay.setDirections(result);
+                  /* debugging */
+                  jQuery("#direction_destination").html(to_marker.store_address);
+                  jQuery("#directions_steps").html('');
+                  var stepCount = 1;
+                  if(result.routes.length > 0){
+                      var my_route = result.routes[0];
+                      var j,k;
+                      for(j=0; j<my_route.legs.length; j++){
+                          var my_leg=my_route.legs[j];
+                          for(k=0; k<my_leg.steps.length; k++){
+                              var mystep = my_leg.steps[k];
+                              jQuery("#directions_steps").append("<div class='directions_step'><div class='directions_step_id'>"+stepCount+".</div><div class='directions_instructions'>" + mystep.instructions + "</div><div class='directions_step_distance'>" + mystep.distance.text + "</div><div style='clear:both; height:0px'></div></div>")
+                              stepCount++;
+                          }
+                      }
+                  }
+
+                  jQuery("#addresses_list").slideUp(function (){
+                      jQuery("#directions_text").slideDown();
+                  });
+                  for(i=0; i<markersArray.length; i++){
+                      markersArray[i].setMap(null);
+                  }
+                  infoPopup.setMap(null);
+              }
+          });
+      }
+  }
+
+  function end_directions(){
+      directionsDisplay.setMap(null);
+      for(i=0; i<markersArray.length; i++){
+          markersArray[i].setMap(boldMap);
+      }
+      jQuery("#directions_text:visible").slideUp(function (){
+          jQuery("#addresses_list:hidden").slideDown();
       });
+  }
+
+  function hoverStart(id){
+      for(i=0; i<markersArray.length; i++){
+          if(markersArray[i].id == id){
+              marker=markersArray[i];
+              marker.setAnimation(google.maps.Animation.BOUNCE);
+          }
+      }
+  }
+
+  function hoverStop(id){
+      for(i=0; i<markersArray.length; i++){
+          if(markersArray[i].id == id){
+              marker=markersArray[i];
+              marker.setAnimation(null);
+          }
+      }
+  }
+
+  function fixURLS(){
+      var websites = jQuery(".addresses .store_website a")
+      for(i=0; i<websites.length; i++){
+          jQuery(websites[i]).text(jQuery(websites[i]).text().replace("http://www.",""))
+      }
+  }
+
+  jQuery(document).ready(initialize);
+  </script>
+
+  
+  <div class="header_html">
       
-      });
-      
-      </script>
+<div id="col-main">
+<div class="search_bar">
+  <div class="main_search_bar">
+      <label class="main_search_label" for="address_search">Find an Order Pick-Up  Location Near You</label>
+      <input type="text" id="address_search" name="address_search" value="Postal/Zip Code" onfocus="if(this.value=='Postal/Zip Code'){this.value=''}">
+  </div>
+  <div class="search_within_distance">
+      <label for="within_distance" class="distance_label">Distance</label>
+      <select id="within_distance" name="within_distance">
+          <option value="25" selected="selected">25 Mi</option>
+          <option value="50">50 Mi</option>
+          <option value="100">100 Mi</option>
+          <option value="0">No Limit</option>
+      </select>
+  </div>
+  <div class="search_limit">
+      <label class="search_limit_label" for="limit">Results</label>
+      <select id="limit" name="limit">
+          <option value="25" selected="selected">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+          <option value="100">100</option>
+      </select>
+  </div>
+  <div class="search_button_outer">
+    <button id="submitBtn" class="btn btn-green" onclick="codeAddress()">Search</button>
+  </div>
+
+  <div style="clear:both"></div>
+</div>
+
+<!-- <div id="store_map"><img src="images/map_img.png" class="img-responsive" alt=""></div> -->
+<div id="store_map"></div>
+<div class="addresses">
+<ul>
+  <li  onmouseover='hoverStart(11566426)' onmouseout='hoverStop(11566426)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11566426, "2020-05-18 12:54:19"); return false;'><span class='name'> EULESS - Elite Fitness</span><br /><span class='address'> 2170 Regal Pkwy</span><br /><span class='city'> Euless</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76040</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11565853)' onmouseout='hoverStop(11565853)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11565853, "2020-05-16 13:33:53"); return false;'><span class='name'> COLLEYVILLE - NexGen Fitness</span><br /><span class='address'> 6000 Colleyville Blvd #140</span><br /><span class='city'> Colleyville</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76034</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11566431)' onmouseout='hoverStop(11566431)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11566431, "2020-05-18 13:05:05"); return false;'><span class='name'> ARLINGTON - Nutrition Nation Cooper St</span><br /><span class='address'> 3701 S Cooper St #167</span><br /><span class='city'> Arlington</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76015</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(8723560)' onmouseout='hoverStop(8723560)'><div class='distance'></div><a href='#' onclick='focus_and_popup(8723560, "2020-04-26 13:46:32"); return false;'><span class='name'> GRAND PRAIRIE - Ultimate Sport Nutrition</span><br /><span class='address'> 3040 W Camp Wisdom Rd, #150</span><br /><span class='city'> Grand Prairie</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75052</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(8134766)' onmouseout='hoverStop(8134766)'><div class='distance'></div><a href='#' onclick='focus_and_popup(8134766, "2020-04-26 13:46:32"); return false;'><span class='name'> COPPELL - Smoothie Factory</span><br /><span class='address'> 230 N Denton Tap Rd, #110</span><br /><span class='city'> Coppell</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75019</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11649625)' onmouseout='hoverStop(11649625)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11649625, "2020-05-27 10:33:10"); return false;'><span class='name'> DALLAS - D-Town CrossFit</span><br /><span class='address'> 155 Parkhouse St </span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75207</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11581365)' onmouseout='hoverStop(11581365)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11581365, "2020-05-19 20:35:25"); return false;'><span class='name'> DALLAS - CBD Alternative Wellness</span><br /><span class='address'> 7719 Inwood Rd</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75209</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7351063)' onmouseout='hoverStop(7351063)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7351063, "2020-04-26 13:46:32"); return false;'><span class='name'> DALLAS - Cryo1one</span><br /><span class='address'> 3818 Cedar Springs Rd, #104</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75219</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7788942)' onmouseout='hoverStop(7788942)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7788942, "2020-04-26 13:46:32"); return false;'><span class='name'> UNIVERSITY PARK - Formula Wellness</span><br /><span class='address'> 4342 Lovers Ln</span><br /><span class='city'> University Park</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75225</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7223068)' onmouseout='hoverStop(7223068)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7223068, "2020-04-26 13:46:32"); return false;'><span class='name'> DALLAS - Smoothie Factory</span><br /><span class='address'> 2817 Howell Street #210</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75204</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(8166388)' onmouseout='hoverStop(8166388)'><div class='distance'></div><a href='#' onclick='focus_and_popup(8166388, "2020-04-26 13:46:32"); return false;'><span class='name'> DALLAS - Formula Wellness </span><br /><span class='address'> 3600 McKinney Ave, #100</span><br /><span class='address2'> (West Village)</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75204</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11566429)' onmouseout='hoverStop(11566429)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11566429, "2020-05-18 13:00:18"); return false;'><span class='name'> DALLAS - Larry North Fitness</span><br /><span class='address'> 6030 Luther Ln #180</span><br /><span class='address2'> (Preston Center)</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75225</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11566433)' onmouseout='hoverStop(11566433)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11566433, "2020-05-18 13:07:52"); return false;'><span class='name'> ARLINGTON - Nutrition Nation Little Rd</span><br /><span class='address'> 4884 Little Rd</span><br /><span class='city'> Arlington</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76017</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(8064520)' onmouseout='hoverStop(8064520)'><div class='distance'></div><a href='#' onclick='focus_and_popup(8064520, "2020-04-26 13:46:32"); return false;'><span class='name'> LEWISVILLE - Ultimate Sport Nutrition</span><br /><span class='address'> 2601 S Stemmons Fwy, #110</span><br /><span class='city'> Lewisville</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75067</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11580333)' onmouseout='hoverStop(11580333)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11580333, "2020-05-19 11:29:09"); return false;'><span class='name'> FARMERS BRANCH - Extreme Studio Performance</span><br /><span class='address'> 4435 McEwen Rd</span><br /><span class='city'> Farmers Branch</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75244</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7221623)' onmouseout='hoverStop(7221623)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7221623, "2020-04-26 13:46:32"); return false;'><span class='name'> DALLAS - Total Nutrition Mockingbird</span><br /><span class='address'> 5706 E Mockingbird Ln</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75206</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11578899)' onmouseout='hoverStop(11578899)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11578899, "2020-05-18 19:26:58"); return false;'><span class='name'> DALLAS - Greater Than Performance & Rehab</span><br /><span class='address'> 7035 Greenville Ave #101</span><br /><span class='address2'> (MEMBERS ONLY)</span><br /><span class='city'> Dallas</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75231</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7375301)' onmouseout='hoverStop(7375301)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7375301, "2020-04-26 13:46:32"); return false;'><span class='name'> CARROLLTON - Nutrition Nation</span><br /><span class='address'> 2810 E Trinity Mills Rd, #131</span><br /><span class='city'> Carrollton</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75006</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11649622)' onmouseout='hoverStop(11649622)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11649622, "2020-05-27 10:16:27"); return false;'><span class='name'> CARROLLTON - F45 Training Hebron</span><br /><span class='address'> 1001 E Hebron Pkwy</span><br /><span class='address2'> (MEMBERS ONLY)</span><br /><span class='city'> Carrollton</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75010</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7980881)' onmouseout='hoverStop(7980881)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7980881, "2020-04-26 13:46:32"); return false;'><span class='name'> PLANO - Cryo1one</span><br /><span class='address'> 5840 Legacy Circle, D175</span><br /><span class='address2'> (Shops of Legacy)</span><br /><span class='city'> Plano</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75024</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11043682)' onmouseout='hoverStop(11043682)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11043682, "2020-05-15 09:25:18"); return false;'><span class='name'> MESQUITE - Nutrition Nation</span><br /><span class='address'> 3501 Towne Crossing Blvd</span><br /><span class='city'> Mesquite</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75150</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7788941)' onmouseout='hoverStop(7788941)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7788941, "2020-04-26 13:46:32"); return false;'><span class='name'> WESTWORTH VILLIAGE - Nutrition Nation</span><br /><span class='address'> 6530 Hawks Creek Ct, #101</span><br /><span class='city'> Westworth Village</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76114</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(9843340)' onmouseout='hoverStop(9843340)'><div class='distance'></div><a href='#' onclick='focus_and_popup(9843340, "2020-04-28 09:25:19"); return false;'><span class='name'> FORT WORTH - Nutrition Nation Hulen</span><br /><span class='address'> 6080 S Hulen St, #110</span><br /><span class='city'> Fort Worth</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76132</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7221620)' onmouseout='hoverStop(7221620)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7221620, "2020-05-18 22:11:52"); return false;'><span class='name'> MESQUITE - Smoothie Factory</span><br /><span class='address'> 1220 N Town E Blvd, #218</span><br /><span class='city'> Mesquite</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75150</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7220007)' onmouseout='hoverStop(7220007)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7220007, "2020-04-26 13:46:32"); return false;'><span class='name'> FRISCO - Complete Health</span><br /><span class='address'> 5355 Dallas Pkwy, #625</span><br /><span class='address2'> (Formerly Complete Nutrition)</span><br /><span class='city'> Frisco</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75034</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11002611)' onmouseout='hoverStop(11002611)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11002611, "2020-04-26 13:46:32"); return false;'><span class='name'> LITTLE ELM - F45 Training Little Elm</span><br /><span class='address'> 26744 E University Dr #100, Little Elm, TX 76227</span><br /><span class='address2'> (LIMITED HOURS) (MEMBERS ONLY)</span><br /><span class='city'> Little Elm</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 76227</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11578898)' onmouseout='hoverStop(11578898)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11578898, "2020-05-18 19:19:46"); return false;'><span class='name'> ALLEN - Destination Gym</span><br /><span class='address'> 1300 N Central Expy #300</span><br /><span class='city'> Allen</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75013</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(11361302)' onmouseout='hoverStop(11361302)'><div class='distance'></div><a href='#' onclick='focus_and_popup(11361302, "2020-05-05 13:14:13"); return false;'><span class='name'> WAXAHACHIE - Shelby Symmetry</span><br /><span class='address'> 217 E Main St</span><br /><span class='city'> Waxahachie</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75165</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(8658074)' onmouseout='hoverStop(8658074)'><div class='distance'></div><a href='#' onclick='focus_and_popup(8658074, "2020-04-26 13:46:32"); return false;'><span class='name'> FORNEY - Nutrition Nation</span><br /><span class='address'> 108 E US Hwy 80, #130</span><br /><span class='city'> Forney</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75126</span>, <span class='country'> United States</span></a></li><li  onmouseover='hoverStart(7221618)' onmouseout='hoverStop(7221618)'><div class='distance'></div><a href='#' onclick='focus_and_popup(7221618, "2020-04-26 13:46:32"); return false;'><span class='name'> MCKINNEY - Legend Nutrition</span><br /><span class='address'> 2851 Craig Dr, #204</span><br /><span class='address2'> (Formerly Ideal Nutrition)</span><br /><span class='city'> McKinney</span>, <span class='prov_state'> Texas</span> <span class='postal_zip'> 75070</span>, <span class='country'> United States</span></a></li>
+</ul>
+</div>
+</div>
+      </div>
+  </section>
+
+  <section>
+    <div class="newsletter_block">
+    <div class="container">
+      <form class="form-inline col-sm-8 col-sm-offset-2">
+        
+        <div class="form-group">
+          <label for="exampleInputEmail2">Subscribe to our newsletter</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="E-mail">
+        </div>
+        <img src="images/path_1472.png" alt="">
+      </form>
+    </div>
+  </div>
+  </section>
+  <footer>
+  <div class="container">
+    <div class="col-sm-3" data-aos="zoom-in">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href=""> Bulk basics</a></li>
+          <li><a href="#"> Prepared meals</a></li>
+          <li><a href="#">Build your own</a></li>
+          <li><a href="#">How it works</a></li>
+         <li><a href="#">Meal creations</a></li>
+         <li>
+           <div class="faq_label">faq</div>
+        <a href="">Nutrition coaching</a></li>
+  
+      </ul>
+    </div>
+    <div class="col-sm-3" data-aos="zoom-in">
+      <h3>Contact Us</h3>
+      <ul><li>
+        us Follow us Instagram 214-876-1653
+  
+      </li>
+    <li> <a href="mailto:info@dallasprepkitchen.com"> info@dallasprepkitchen.com</a></li></ul>
+    </div>
+    <div class="col-sm-3" data-aos="zoom-in">
+      <h3>Follow Us</h3>
+      <div class="social_media"><img src="images/instagram_ek1.png" alt=""> <img src="images/facebook_f.png" alt=""> <img src="images/youtube.png" alt=""></div>
+  
+    </div>
+    <div class="col-sm-3" data-aos="zoom-in">
+      <h3>Instagram</h3>
+      <div class="instagram_block"><img src="images/img_5286.png" alt=""></div>
+    </div>
+   
+  </div>
+  <div class="copyright">
+    <div class="container">Copyright 2019 Dallas Prep Kitchen - All Rights Reserved</div></div>
+  </footer>
+  <div class="chat_widget">
+    <img src="images/chat.svg" alt="">
+  </div>
+</div>
+  <script src="js/menu.js"></script>   
+<script>
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("slide_reviews");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        };
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+<script src="js/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1200,
+    })
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+  
+  $('.navbar .dropdown-item').on('click', function (e) {
+      var $el = $(this).children('.dropdown-toggle');
+      var $parent = $el.offsetParent(".dropdown-menu");
+      $(this).parent("li").toggleClass('open');
+  
+      if (!$parent.parent().hasClass('navbar-nav')) {
+          if ($parent.hasClass('show')) {
+              $parent.removeClass('show');
+              $el.next().removeClass('show');
+              $el.next().css({"top": -999, "left": -999});
+          } else {
+              $parent.parent().find('.show').removeClass('show');
+              $parent.addClass('show');
+              $el.next().addClass('show');
+              $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
+          }
+          e.preventDefault();
+          e.stopPropagation();
+      }
+  });
+  
+  $('.navbar .dropdown').on('hidden.bs.dropdown', function () {
+      $(this).find('li.dropdown').removeClass('show open');
+      $(this).find('ul.dropdown-menu').removeClass('show open');
+  });
+  
+  });
+  
+  </script>
 </body>
 
 </html>

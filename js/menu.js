@@ -33,30 +33,18 @@ function fixedHeader() {
 }
 fixedHeader();
 
-// function slideMenu() {
-  
-// var overlay = document.getElementById('overlay');
-// var closeMenu = document.getElementById('close-menu');
-
-// document.getElementById('open-menu').addEventListener('click', function() {
-//     overlay.classList.add('show-menu');
-//     console.log('clicked');
-// });
-// document.getElementById('close-menu').addEventListener('click', function() {
-//     overlay.classList.remove('show-menu');
-// });
-// }
-// slideMenu();
-
-
-
 function openNav() {
-  document.getElementById("overlay").style.width = "250px";
+  //document.getElementById("overlay").style.width = "250px";
+  document.querySelector('.hid_icon').classList.add('hideMenu');
+  document.querySelector('.closebtn').style.display= 'block';
 }
 
 
 function closeNav() {
-  document.getElementById("overlay").style.width  = "0";
+ // document.getElementById("overlay").style.width  = "0";
+ document.querySelector('.hid_icon').classList.remove('hideMenu');
+ document.querySelector('.closebtn').style.display= 'none';
+ 
 }
 
 
