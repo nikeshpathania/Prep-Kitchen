@@ -514,6 +514,7 @@ section {
   width: 100%;
   position: absolute;
   left: 0;
+  display: none;
 }
 
 .delivery_option .bg img {
